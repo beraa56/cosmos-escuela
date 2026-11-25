@@ -1500,9 +1500,9 @@ main > section.sec:has(.sbs){padding-bottom:0}
 .mk-card .mk-tab{transition:transform .5s cubic-bezier(.2,.7,.2,1)}
 /* Tarjeta paleta de color */
 .wc-pal{background:#2A2521}
-.pal-ph{position:absolute;inset:0;right:36%;background-size:cover;background-position:58% 40%}
-.pal-col{position:absolute;top:0;right:0;width:36%;bottom:0;display:flex;flex-direction:column}.pal-col::after{content:"";flex:0 0 45%;background:#4A4632}
-.pal-sw{flex:1;position:relative;background:var(--c);display:flex;flex-direction:column;justify-content:flex-start;gap:3px;padding:12px 14px;justify-content:center;color:var(--t);overflow:hidden;transition:flex .5s cubic-bezier(.2,.7,.2,1)}
+.pal-ph{position:absolute;inset:0;background-size:cover;background-position:58% 40%}
+.pal-col{position:absolute;top:0;right:0;width:30%;bottom:0;display:flex;flex-direction:column}.pal-col::after{content:"";flex:0 0 45%}
+.pal-sw{flex:1;position:relative;background:var(--c);opacity:.78;backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);display:flex;flex-direction:column;justify-content:flex-start;gap:3px;padding:12px 14px;justify-content:center;color:var(--t);overflow:hidden;transition:flex .5s cubic-bezier(.2,.7,.2,1)}
 .pal-sw::before{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .45 0 0 0 0 .4 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.35;mix-blend-mode:multiply;pointer-events:none}
 .pal-sw b{position:relative;font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase}
 .pal-sw span{position:relative;font-size:9.5px;letter-spacing:.14em;opacity:.8}
@@ -1626,7 +1626,7 @@ main > section.sec:has(.sbs){padding-bottom:0}
     </div>
     <div class="wcovers">
       <a class="wcover" href="#workshop-color">
-        <div class="wc-img wc-pal"><div class="pal-ph" style="background-image:url('fotos/workshop-color.jpg')"></div><div class="pal-col" aria-hidden="true"><div class="pal-sw" style="--c:#B4B2AA;--t:#3A3631"><b>Gris perla</b><span>#B4B2AA</span></div><div class="pal-sw" style="--c:#C9A043;--t:#3A2E18"><b>Mostaza</b><span>#C9A043</span></div><div class="pal-sw" style="--c:#6E4A38;--t:#F3E9DC"><b>Castaño</b><span>#6E4A38</span></div><div class="pal-sw" style="--c:#55543A;--t:#F3E9DC"><b>Musgo</b><span>#55543A</span></div></div>
+        <div class="wc-img wc-pal"><div class="pal-ph" style="background-image:url('fotos/workshop-color.jpg')"></div><div class="pal-col" aria-hidden="true"><div class="pal-sw" style="--c:#B4B2AA;--t:#3A3631"></div><div class="pal-sw" style="--c:#C9A043;--t:#3A2E18"></div><div class="pal-sw" style="--c:#6E4A38;--t:#F3E9DC"></div><div class="pal-sw" style="--c:#55543A;--t:#F3E9DC"></div></div>
           <div class="wc-txt"><p class="wc-label">Workshop · Fotografía · 3 días</p><h3>Construye una paleta de color <em>que transmita una emoción</em></h3></div>
         </div>
         <p class="soft">Elige una emoción, construye su paleta desde la locación y llévala a una foto real.</p>
