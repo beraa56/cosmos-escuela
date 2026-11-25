@@ -1493,6 +1493,11 @@ main > section.sec:has(.sbs){padding-bottom:0}
   .mk-sheet{transform:translate(-50%,-50%) rotate(-9deg) scale(.75)}
   .mk-tab{transform:translate(-50%,-50%) scale(.82)}
 }
+.mk-card{position:absolute;inset:0;height:auto;margin:0;border-radius:0}
+.mk-card .mk-sheet{width:1400px;top:40%;transform:translate(-50%,-50%) rotate(-9deg) scale(.42) !important;filter:blur(.5px)}
+.mk-card .mk-tab{top:30%;transform:translate(-50%,-50%) scale(.36) !important}
+.wcover:hover .mk-card .mk-tab{transform:translate(-50%,-53%) scale(.37) !important}
+.mk-card .mk-tab{transition:transform .5s cubic-bezier(.2,.7,.2,1)}
 [hidden]{display:none !important}
 </style>
 
@@ -1630,28 +1635,15 @@ main > section.sec:has(.sbs){padding-bottom:0}
       </div>
       <a class="wcover" href="#workshop-guia">
         <div class="wc-img wc-mock">
-          <div class="guide-mock" aria-hidden="true">
-      <div class="gpage gp-1">
-        <img src="fotos/g4.jpg" alt="" loading="lazy">
-        <div class="gp-cover"><span>Bienvenida</span><small>a tu sesión familiar</small></div>
-      </div>
-      <div class="gpage gp-2">
-        <p class="gp-t">¿Qué ropa usar?</p>
-        <img src="fotos/calma.jpg" alt="" loading="lazy">
-        <p class="gp-sub">Tu paleta base</p>
-        <div class="gp-sw"><i style="--c:#E6DDD0"></i><i style="--c:#C9AE8F"></i><i style="--c:#9C7A5E"></i><i style="--c:#8E9188"></i></div>
-        <p class="gp-sub">Un toque de color</p>
-        <div class="gp-sw"><i style="--c:#C98B4E"></i><i style="--c:#7D8248"></i><i style="--c:#B9787A"></i></div>
-        <span class="gp-line"></span><span class="gp-line s"></span>
-      </div>
-      <div class="gpage gp-3">
-        <p class="gp-t">Preguntas frecuentes</p>
-        <p class="gp-q">¿Cuánto dura la sesión?</p><span class="gp-line"></span><span class="gp-line s"></span>
-        <p class="gp-q">¿Cuándo recibo mis fotos?</p><span class="gp-line"></span><span class="gp-line"></span><span class="gp-line s"></span>
-        <p class="gp-q">¿Qué pasa si llueve?</p><span class="gp-line"></span><span class="gp-line s"></span>
-        <img src="fotos/ternura.jpg" alt="" loading="lazy">
-      </div>
-          </div>
+          <div class="mk mk-card" aria-hidden="true"><div class="mk-sheet"><div class="mk-pg"><p class="mk-h mk-scr">Índice</p><div class="mk-toc"><span><i style="width:55%"></i><b>03</b></span><span><i style="width:68%"></i><b>05</b></span><span><i style="width:48%"></i><b>07</b></span><span><i style="width:62%"></i><b>09</b></span><span><i style="width:52%"></i><b>11</b></span><span><i style="width:70%"></i><b>13</b></span><span><i style="width:45%"></i><b>15</b></span><span><i style="width:58%"></i><b>17</b></span></div></div><div class="mk-pg"><img src="fotos/s1-03.jpg" alt=""><p class="mk-h">Bienvenida</p><div class="mk-tx"><i style="width:96%"></i><i style="width:88%"></i><i style="width:92%"></i><i style="width:60%"></i></div></div><div class="mk-pg"><p class="mk-h">Antes de la sesión</p><div class="mk-tx"><i style="width:94%"></i><i style="width:90%"></i><i style="width:96%"></i><i style="width:70%"></i><i style="width:0%"></i><i style="width:92%"></i><i style="width:86%"></i><i style="width:94%"></i><i style="width:50%"></i></div><img class="mk-pol" src="fotos/bernardita.jpg" alt=""></div><div class="mk-pg mk-pg-full"><img class="mk-full" src="fotos/s2-04.jpg" alt=""></div><div class="mk-pg"><p class="mk-h">¿Qué ropa usar?</p><div class="mk-sw"><i style="--c:#ECE6DC"></i><i style="--c:#D8C7B0"></i><i style="--c:#B79B7C"></i><i style="--c:#8E9188"></i><i style="--c:#C98B4E"></i><i style="--c:#7D8FA3"></i></div><div class="mk-tx"><i style="width:90%"></i><i style="width:84%"></i><i style="width:60%"></i></div></div><div class="mk-pg"><div class="mk-two"><img src="fotos/s3-02.jpg" alt=""><img src="fotos/s3-05.jpg" alt=""></div><p class="mk-h">La locación</p><div class="mk-tx"><i style="width:92%"></i><i style="width:80%"></i></div></div><div class="mk-pg"><p class="mk-h">Durante la sesión</p><div class="mk-tx"><i style="width:92%"></i><i style="width:96%"></i><i style="width:88%"></i><i style="width:70%"></i><i style="width:0%"></i><i style="width:94%"></i><i style="width:90%"></i><i style="width:62%"></i></div><img src="fotos/s2-07.jpg" alt=""></div><div class="mk-pg mk-pg-full"><img class="mk-full" src="fotos/s4-05.jpg" alt=""></div><div class="mk-pg"><p class="mk-h">La entrega</p><ol class="mk-steps"><li><b>01</b><div class="mk-tx"><i style="width:80%"></i><i style="width:60%"></i></div></li><li><b>02</b><div class="mk-tx"><i style="width:86%"></i><i style="width:50%"></i></div></li><li><b>03</b><div class="mk-tx"><i style="width:76%"></i><i style="width:64%"></i></div></li></ol></div><div class="mk-pg"><img src="fotos/s1-06.jpg" alt=""><p class="mk-h">Preguntas frecuentes</p><div class="mk-tx"><i style="width:94%"></i><i style="width:86%"></i><i style="width:90%"></i><i style="width:58%"></i></div></div><div class="mk-pg"><p class="mk-h">Paleta de colores</p><div class="mk-pal"><i style="--c:#D8C7B0"></i><i style="--c:#9C7A5E"></i><i style="--c:#C9AE8F"></i><i style="--c:#8B918A"></i></div><div class="mk-tx"><i style="width:88%"></i><i style="width:70%"></i></div></div><div class="mk-pg mk-pg-full"><img class="mk-full" src="fotos/s3-07.jpg" alt=""></div></div><div class="mk-tab"><div class="mk-scr-in">
+        <img class="mk-logo" src="fotos/logo-b.png" alt="">
+        <p class="mk-brand">Bernardita Aguirre<small>Fotografía Fine Art</small></p>
+        <img class="mk-cov" src="fotos/s4-01.jpg" alt="">
+        <p class="mk-pre">Guía de</p>
+        <p class="mk-big">Bienvenida</p>
+        <p class="mk-sub">Qué esperar + cómo prepararte</p>
+        <p class="mk-tag">Sesiones naturales, cercanas y llenas de conexión.</p>
+      </div></div></div>
           <div class="wc-txt"><p class="wc-label">Workshop · Producción · 2 días</p><h3>Diseña una guía de bienvenida <em>para tus clientes</em></h3></div>
         </div>
         <p class="soft">Crea la guía que prepara a tus clientes antes de cada sesión.</p>
