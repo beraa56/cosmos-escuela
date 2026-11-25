@@ -1410,6 +1410,11 @@ main > section.sec:has(.sbs){padding-bottom:0}
 .cover[data-photo="edicion"] .lead{max-width:440px}
 .cover[data-photo="edicion"] h1{font-size:clamp(40px,4vw,58px)}}
 @media (max-width:860px){.cover[data-photo="edicion"]{background-position:84% 50%}}
+.home-cover{background-position:100% 50% !important}
+@media (min-width:861px){.home-cover{height:calc(100svh - var(--navh,110px)) !important;min-height:600px !important;max-height:900px}
+.home-cover .cover-in > *{max-width:540px}
+.home-cover h1{font-size:clamp(42px,4.4vw,64px)}}
+@media (max-width:860px){.home-cover{background-position:83% 30% !important;align-items:flex-end;min-height:calc(100svh - var(--navh,90px)) !important}.home-cover::before{background:linear-gradient(180deg,rgba(28,22,18,0) 35%,rgba(28,22,18,.55) 62%,rgba(28,22,18,.85) 100%)}.home-cover .cover-in{padding-block:32px 48px}}
 [hidden]{display:none !important}
 </style>
 
@@ -1444,7 +1449,7 @@ main > section.sec:has(.sbs){padding-bottom:0}
      ========================================================= -->
 <main data-view="inicio">
 
-<header class="cover cover-bottom" data-photo="inicio" style="background-position:center 30%">
+<header class="cover left home-cover" data-photo="inicio">
   <div class="cover-in">
     <p class="label">Escuela online · El corazón del Fine Art</p>
     <h1>Aprende fotografía Fine Art <em>con mi método COSMOS.</em></h1>
@@ -2938,7 +2943,7 @@ const CURSOS = {
    no aparece en la página.
    ============================================================ */
 const FOTOS = {
-  "inicio": "fotos/inicio2.jpg",
+  "inicio": "fotos/inicio-banner.jpg",
   "bernardita": "fotos/bernardita.jpg",   // la de blanco y negro: "fotos/bernardita-byn.jpg"
   "workshop-color": "fotos/workshop-color.jpg",
   "workshop-edicion": "fotos/workshop-edicion.jpg",
