@@ -1403,6 +1403,13 @@ main > section.sec:has(.sbs){padding-bottom:0}
 .cover[data-photo="produccion"] .cover-in > *{max-width:520px}
 .cover[data-photo="produccion"] .lead{max-width:440px}
 .cover[data-photo="produccion"] h1{font-size:clamp(40px,4vw,58px)}}
+.cover[data-photo="edicion"]{background-position:100% 50%}
+@media (min-width:861px){.cover[data-photo="edicion"]{height:clamp(600px,47vw,800px) !important;min-height:0 !important}
+.cover[data-photo="edicion"] .cover-in{padding-block:48px}
+.cover[data-photo="edicion"] .cover-in > *{max-width:520px}
+.cover[data-photo="edicion"] .lead{max-width:440px}
+.cover[data-photo="edicion"] h1{font-size:clamp(40px,4vw,58px)}}
+@media (max-width:860px){.cover[data-photo="edicion"]{background-position:84% 50%}}
 [hidden]{display:none !important}
 </style>
 
@@ -2405,7 +2412,7 @@ main > section.sec:has(.sbs){padding-bottom:0}
      ========================================================= -->
 <main data-view="edicion" data-course="edicion" hidden>
 
-<header class="cover left" data-photo="edicion" style="background-position:80% 50%">
+<header class="cover left" data-photo="edicion">
   <div class="cover-in">
     <span class="pill pill-fc">Formación completa</span>
     <p class="label">Curso de edición · 4 semanas</p>
@@ -2937,7 +2944,7 @@ const FOTOS = {
   "workshop-edicion": "fotos/workshop-edicion.jpg",
   "workshop-guia": "fotos/workshop-guia-otono.jpg",
   "idea-al-disparo": "fotos/idea-al-disparo.jpg",
-  "edicion": "fotos/edicion-curso.jpg",
+  "edicion": "fotos/edicion-banner.jpg",
   "produccion": "fotos/produccion-banner2.jpg"
 };
 
