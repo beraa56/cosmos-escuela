@@ -1557,6 +1557,48 @@ main > section.sec:has(.sbs){padding-bottom:0}
 @media (min-width:861px){main > section.sec:has(.grad-home){padding-block:34px !important;min-height:0 !important}
 .sec:has(.grad-home) .head{margin-bottom:22px !important}
 .sec:has(.grad-home) .ccard .more,.sec:has(.grad-home) .ccard .cc-more{margin-top:10px}}
+/* Tablero de inspiración interactivo */
+.mb{position:relative;justify-self:center;width:100%;max-width:620px}
+.mb-board{position:relative;aspect-ratio:6/5;background:#E9E1D5;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .38 0 0 0 0 .3 0 0 0 .18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");box-shadow:inset 0 0 80px rgba(110,85,60,.16);overflow:hidden;border-radius:3px}
+.mb-it{position:absolute;transform:rotate(var(--r,0));transition:opacity .6s,filter .6s,transform .7s cubic-bezier(.2,.7,.2,1)}
+.mb-note{left:6%;top:7%;width:40%;padding:20px 18px 22px;background:#FBF8F2;box-shadow:0 6px 16px rgba(60,40,25,.14);clip-path:polygon(0 3%,8% 0,20% 2%,35% 0,52% 3%,68% 0,84% 2%,100% 0,99% 97%,86% 100%,70% 98%,52% 100%,34% 97%,18% 100%,0 98%)}
+.mb-k{margin:0 0 6px;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#93462F}
+.mb-hand{margin:0;font-family:'Parisienne',cursive;font-size:clamp(26px,2.6vw,36px);line-height:1.05;color:#3A2A22}
+.mb-tape{position:absolute;top:-9px;left:50%;width:74px;height:22px;margin-left:-37px;background:rgba(214,184,146,.72);transform:rotate(var(--tr,0));box-shadow:0 1px 2px rgba(0,0,0,.06)}
+.mb-pol{margin:0;background:#fff;padding:9px 9px 30px;box-shadow:0 8px 20px rgba(60,40,25,.18)}
+.mb-pol img{display:block;width:100%;object-fit:cover}
+.mb-pol figcaption{position:absolute;left:0;right:0;bottom:6px;text-align:center;font-family:'Parisienne',cursive;font-size:19px;color:#5A3E2E}
+.mb-p1{left:52%;top:6%;width:42%}.mb-p1 img{aspect-ratio:16/9}
+.mb-p2{left:50%;top:44%;width:36%}.mb-p2 img{aspect-ratio:4/3}
+.mb-pin{position:absolute;top:-6px;left:50%;width:13px;height:13px;margin-left:-6px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#E6C27A,#A27B2E);box-shadow:0 2px 3px rgba(0,0,0,.3)}
+.mb-chips{left:7%;top:47%;display:flex;gap:6px;padding:10px;background:#FBF8F2;box-shadow:0 6px 14px rgba(60,40,25,.12)}
+.mb-chips i{display:block;width:34px;height:52px;background:var(--c);box-shadow:inset 0 -14px 0 #FBF8F2}
+.mb-tag{padding:5px 11px;background:#FBF8F2;font-size:12px;letter-spacing:.06em;color:#4A3F36;box-shadow:0 3px 8px rgba(60,40,25,.12);white-space:nowrap}
+.mb-tag-q{font-family:'Parisienne',cursive;font-size:18px;letter-spacing:0;padding:2px 12px;color:#93462F}
+.mb-leaf{left:34%;top:30%;width:44px;opacity:.9;filter:drop-shadow(0 4px 4px rgba(60,40,25,.2))}
+.mb-final{position:absolute;left:50%;top:50%;margin:0;height:90%;aspect-ratio:864/1100;background:#fff;padding:10px 10px 34px;box-shadow:0 24px 50px rgba(40,28,20,.35);opacity:0;transform:translate(-50%,-46%) rotate(3deg) scale(.86);transition:opacity .6s,transform .8s cubic-bezier(.2,.7,.2,1);pointer-events:none}
+.mb-final img{display:block;width:100%;height:100%;object-fit:cover}
+.mb-final figcaption{position:absolute;left:0;right:0;bottom:7px;text-align:center;font-family:'Parisienne',cursive;font-size:22px;color:#3A2A22}
+.mb.on .mb-final{opacity:1;transform:translate(-50%,-50%) rotate(-1.5deg) scale(1)}
+.mb.on .mb-it{opacity:.35;filter:blur(2px)}
+.mb.on .mb-note{transform:translate(-14%,-6%) rotate(-8deg)}.mb.on .mb-p1{transform:translate(14%,-8%) rotate(8deg)}.mb.on .mb-p2{transform:translate(18%,10%) rotate(-9deg)}.mb.on .mb-chips{transform:translate(-16%,8%) rotate(6deg)}
+.mb-btn{position:absolute;right:16px;bottom:16px;z-index:3;font:inherit;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:#93462F;border:0;border-radius:999px;padding:12px 20px;cursor:pointer;box-shadow:0 8px 18px rgba(147,70,47,.35);transition:background .3s,transform .3s}
+.mb-btn:hover{background:#B3240C;transform:translateY(-2px)}
+.mb-btn::before{content:"✦ "}
+.mb-btn-b,.mb.on .mb-btn-a{display:none}.mb.on .mb-btn-b{display:inline}
+.mb:not(.on):not(.seen) .mb-btn{animation:mbpulse 2.4s ease-in-out infinite}
+@keyframes mbpulse{0%,100%{box-shadow:0 8px 18px rgba(147,70,47,.35),0 0 0 0 rgba(147,70,47,.35)}50%{box-shadow:0 8px 18px rgba(147,70,47,.35),0 0 0 10px rgba(147,70,47,0)}}
+.mb-steps{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
+.mb-steps li{border-bottom:1px solid var(--line)}
+.mb-steps button{all:unset;box-sizing:border-box;width:100%;cursor:pointer;display:flex;gap:14px;align-items:baseline;padding:10px 0;font-family:var(--f-display);font-size:19px;color:var(--ink);transition:color .3s,padding .3s}
+.mb-steps button:hover,.mb-steps button.act{color:#93462F;padding-left:8px}
+.mb-steps button:focus-visible{outline:2px solid #93462F;outline-offset:2px}
+.mb-it.hl{z-index:2;filter:none !important;opacity:1 !important;transform:rotate(var(--r,0)) scale(1.07) !important;box-shadow:0 16px 30px rgba(60,40,25,.25)}
+.mb-steps b{font-style:italic;font-weight:400;font-size:14px;color:#93462F;width:22px}
+.mb-steps li:last-child button{color:#93462F;font-style:italic}
+@media (min-width:861px){.mood-wrap{grid-template-columns:minmax(0,4fr) minmax(0,6fr) !important}}
+@media (max-width:860px){.mb-steps button{font-size:16px}.mb-note{padding:12px 12px 14px}.mb-chips i{width:22px;height:36px;box-shadow:inset 0 -10px 0 #FBF8F2}.mb-chips{padding:7px;gap:4px}.mb-tag{font-size:10px;padding:4px 8px}.mb-tag-q{font-size:15px}.mb-pol{padding:6px 6px 22px}.mb-pol figcaption{font-size:15px;bottom:3px}.mb-btn{right:10px;bottom:10px;padding:10px 14px;font-size:11px}.mb-leaf{width:30px}.mb-steps li{font-size:16px}}
+@media (prefers-reduced-motion:reduce){.mb-it,.mb-final{transition:none}.mb-btn{animation:none !important}}
 [hidden]{display:none !important}
 </style>
 
@@ -2357,14 +2399,21 @@ main > section.sec:has(.sbs){padding-bottom:0}
       <p class="label">Inspiración</p>
       <h2>De la inspiración <em>a la foto.</em></h2>
       <p class="soft">Así se ve una idea antes de convertirse en foto: referencias, texturas, colores y la emoción que quieres transmitir. En el curso armas tu propio tablero de inspiración y lo llevas a cámara.</p>
+      <ol class="mb-steps"><li><button type="button" data-s="1"><b>01</b>La idea</button></li><li><button type="button" data-s="2"><b>02</b>Las referencias</button></li><li><button type="button" data-s="3"><b>03</b>La paleta</button></li><li><button type="button" data-s="4"><b>04</b>La foto</button></li></ol>
     </div>
-    <div class="board" aria-label="Tablero de inspiración de una foto">
-      <figure class="bp bp-main"><span class="clip" aria-hidden="true"></span><img src="fotos/mood-foto.jpg" alt="Niña con corona de hojas de otoño y vestido burdeo" loading="lazy"><figcaption>La foto</figcaption></figure>
-      <figure class="bp bp-a"><span class="pin" aria-hidden="true"></span><img src="fotos/mood-corona.jpg" alt="Detalle de la corona de hojas secas" loading="lazy"></figure>
-      <div class="chip chip-1" style="--c:#8E3B32"><span class="pin" aria-hidden="true"></span></div>
-      <div class="note"><span class="clip" aria-hidden="true"></span><p>Idea</p><p class="note-t"><em>El otoño hecho corona</em></p><ul><li>Hojas secas</li><li>Lino y borlas</li><li>Mirada directa</li><li>Luz suave</li></ul></div>
-      <figure class="bp bp-b"><span class="pin" aria-hidden="true"></span><img src="fotos/mood-tela.jpg" alt="Detalle del vestido de lino con borlas" loading="lazy"></figure>
-      <div class="chips"><i style="--c:#D9A441"></i><i style="--c:#5E6B4E"></i><i style="--c:#4E6463"></i><i style="--c:#E8DFCF"></i></div>
+    <div class="mb" aria-label="Tablero de inspiración de una foto">
+      <div class="mb-board">
+        <div class="mb-it mb-note" data-s="1" style="--r:-3deg"><span class="mb-tape" style="--tr:-6deg"></span><p class="mb-k">La idea</p><p class="mb-hand">El otoño<br>hecho corona</p></div>
+        <figure class="mb-it mb-pol mb-p1" data-s="2" style="--r:3deg"><span class="mb-tape" style="--tr:4deg"></span><img src="fotos/mood-corona.jpg" alt="Referencia: corona de hojas secas" loading="lazy"><figcaption>hojas secas</figcaption></figure>
+        <figure class="mb-it mb-pol mb-p2" data-s="2" style="--r:-4deg"><span class="mb-pin"></span><img src="fotos/mood-tela.jpg" alt="Referencia: vestido de lino con borlas" loading="lazy"><figcaption>lino y borlas</figcaption></figure>
+        <div class="mb-it mb-chips" data-s="3" style="--r:2deg"><i style="--c:#8E3B32"></i><i style="--c:#D9A441"></i><i style="--c:#5E6B4E"></i><i style="--c:#4E6463"></i><i style="--c:#E8DFCF"></i></div>
+        <span class="mb-it mb-tag" style="--r:-5deg;left:30%;top:80%">mirada directa</span>
+        <span class="mb-it mb-tag" style="--r:4deg;left:8%;top:87%">luz suave</span>
+        <span class="mb-it mb-tag mb-tag-q" style="--r:-3deg;left:8%;top:68%">¿qué quiero contar?</span>
+        <svg class="mb-it mb-leaf" style="--r:24deg" viewBox="0 0 60 90" aria-hidden="true"><path d="M30 4C10 22 6 52 28 84C52 54 50 22 30 4z" fill="#B5652E"/><path d="M30 8V86M30 30l-10-8M30 44l12-9M30 58l-11-8M30 70l10-7" stroke="#7A3E1A" stroke-width="1.4" fill="none"/></svg>
+        <figure class="mb-final"><img src="fotos/mood-foto.jpg" alt="La foto final: niña con corona de hojas de otoño y vestido burdeo" loading="lazy"><figcaption>La foto</figcaption></figure>
+      </div>
+      <button type="button" class="mb-btn" aria-pressed="false"><span class="mb-btn-a">Revelar la foto</span><span class="mb-btn-b">Volver al tablero</span></button>
     </div>
   </div>
 </section>
@@ -3441,6 +3490,22 @@ const CARRUSELES = {
     function all() { items.forEach(place); }
     window.addEventListener("resize", all); window.addEventListener("hashchange", function () { setTimeout(all, 50); });
   })();
+
+
+  // Tablero de inspiración: revelar la foto
+  document.querySelectorAll(".mb").forEach(function (mb) {
+    const btn = mb.querySelector(".mb-btn");
+    const steps = Array.prototype.slice.call(document.querySelectorAll(".mb-steps button"));
+    function set(on) { mb.classList.toggle("on", on); mb.classList.add("seen"); btn.setAttribute("aria-pressed", String(on)); }
+    function mark(n) {
+      steps.forEach(function (b) { b.classList.toggle("act", b.dataset.s === n); });
+      mb.querySelectorAll(".mb-it").forEach(function (it) { it.classList.toggle("hl", !!n && it.dataset.s === n); });
+    }
+    btn.addEventListener("click", function () { const on = !mb.classList.contains("on"); set(on); mark(on ? "4" : ""); });
+    steps.forEach(function (b) {
+      b.addEventListener("click", function () { const n = b.dataset.s; set(n === "4"); mark(n); });
+    });
+  });
 
   const titles = {
     "inicio": "Cosmos, escuela online",
