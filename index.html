@@ -1508,6 +1508,24 @@ main > section.sec:has(.sbs){padding-bottom:0}
 .wcover:hover .pal-sw:nth-child(2){transition-delay:.05s}.wcover:hover .pal-sw:nth-child(3){transition-delay:.1s}.wcover:hover .pal-sw:nth-child(4){transition-delay:.15s}
 .wc-pal::before{z-index:1}
 .wc-pal .wc-txt{z-index:2}
+/* Qué incluye en tarjetas con íconos */
+.incl{display:grid !important;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;border-top:0 !important}
+.incl li{display:flex !important;flex-direction:column;gap:6px;padding:24px 24px 22px !important;background:#FBF9F6;border:1px solid var(--line) !important;border-radius:4px;transition:transform .35s,box-shadow .35s}
+.incl li::before{content:none !important}
+.incl li:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(60,40,25,.08)}
+.incl-ico{width:44px;height:44px;border-radius:50%;background:#EFE6DA;display:flex;align-items:center;justify-content:center;margin-bottom:8px;color:var(--accent,#93462F)}
+.incl-ico svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.incl li > b{font-size:17px !important}
+.incl li > span{font-size:15px;line-height:1.55}
+@media (max-width:860px){.incl{grid-template-columns:1fr 1fr;gap:10px}.incl li{padding:16px !important}.incl li > b{font-size:15px !important}.incl li > span{font-size:13.5px}.incl-ico{width:38px;height:38px}}
+@media (max-width:420px){.incl{grid-template-columns:1fr}}
+@media (min-width:861px){
+.incl{grid-template-columns:repeat(6,minmax(0,1fr)) !important}
+.incl li{grid-column:span 2}
+.incl:has(> li:nth-child(4):last-child) li{grid-column:span 3}
+.incl:has(> li:nth-child(4):last-child){grid-template-columns:repeat(12,minmax(0,1fr)) !important}
+.incl:has(> li:nth-child(5):last-child) li:nth-child(n+4){grid-column:span 3}
+}
 [hidden]{display:none !important}
 </style>
 
@@ -1863,10 +1881,10 @@ main > section.sec:has(.sbs){padding-bottom:0}
   <div class="wrap include">
     <div class="head"><p class="label">Qué incluye</p><h2>Todo lo que <em>recibes.</em></h2></div>
     <ul class="incl">
-      <li><b>3 clases en vivo por Zoom</b><span>De 2 horas cada una, a las 7:00 pm hora de Chile<span class="localtime"></span>.</span></li>
-      <li><b>Grabaciones por 1 mes</b><span>Si no puedes conectarte, ves las clases cuando quieras durante un mes.</span></li>
-      <li><b>Mis guías de color</b><span>"El círculo cromático RGB", "Luz y color" y la checklist "5 preguntas antes de cada sesión".</span></li>
-      <li><b>Grupo de WhatsApp</b><span>Para resolver dudas durante la semana del workshop.</span></li>
+      <li><span class="incl-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 7h12v10H3z M15 10l6-3v10l-6-3"/></svg></span><b>3 clases en vivo por Zoom</b><span>De 2 horas cada una, a las 7:00 pm hora de Chile<span class="localtime"></span>.</span></li>
+      <li><span class="incl-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 0 0 0-18z M10 8.5v7l6-3.5z"/></svg></span><b>Grabaciones por 1 mes</b><span>Si no puedes conectarte, ves las clases cuando quieras durante un mes.</span></li>
+      <li><span class="incl-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18c1.4 0 2-1 1.4-2.2c-.6-1.2.2-2.3 1.6-2.3H18a3 3 0 0 0 3-3c0-5-4-10.5-9-10.5z M7.5 11a1 1 0 1 0 0 .1 M10.5 7a1 1 0 1 0 0 .1 M15 7.5a1 1 0 1 0 0 .1"/></svg></span><b>Mis guías de color</b><span>"El círculo cromático RGB", "Luz y color" y la checklist "5 preguntas antes de cada sesión".</span></li>
+      <li><span class="incl-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z M8 9.5h8 M8 12.5h5"/></svg></span><b>Grupo de WhatsApp</b><span>Para resolver dudas durante la semana del workshop.</span></li>
     </ul>
     <div class="bono" data-bono="ws-color"></div>
   </div>
@@ -2024,11 +2042,11 @@ main > section.sec:has(.sbs){padding-bottom:0}
   <div class="wrap include">
     <div class="head"><p class="label">Qué incluye</p><h2>Todo lo que <em>recibes.</em></h2></div>
     <ul class="incl">
-      <li><b>3 clases en vivo por Zoom</b><span>De 2 horas cada una, a las 7:00 pm hora de Chile<span class="localtime"></span>.</span></li>
-      <li><b>Grabaciones por 1 mes</b><span>Si no puedes conectarte, ves las clases cuando quieras durante un mes.</span></li>
-      <li><b>Video previo de Lightroom Classic</b><span>Si nunca lo has usado, antes del workshop te envío un video con lo básico, para que partas con todo listo.</span></li>
-      <li><b>Mi flujo de edición en PDF</b><span>Los pasos del workshop, para tenerlos a mano en cada sesión. Y los atajos de teclado de Lightroom Classic que más uso.</span></li>
-      <li><b>Grupo de WhatsApp</b><span>Para resolver dudas durante la semana del workshop.</span></li>
+      <li><span class="incl-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 7h12v10H3z M15 10l6-3v10l-6-3"/></svg></span><b>3 clases en vivo por Zoom</b><span>De 2 horas cada una, a las 7:00 pm hora de Chile<span class="localtime"></span>.</span></li>
+      <li><span class="incl-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 0 0 0-18z M10 8.5v7l6-3.5z"/></svg></span><b>Grabaciones por 1 mes</b><span>Si no puedes conectarte, ves las clases cuando quieras durante un mes.</span></li>
+      <li><span class="incl-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 0 0 0-18z M10 8.5v7l6-3.5z"/></svg></span><b>Video previo de Lightroom Classic</b><span>Si nunca lo has usado, antes del workshop te envío un video con lo básico, para que partas con todo listo.</span></li>
+      <li><span class="incl-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z M14 3v4h4 M9 12h6 M9 16h6"/></svg></span><b>Mi flujo de edición en PDF</b><span>Los pasos del workshop, para tenerlos a mano en cada sesión. Y los atajos de teclado de Lightroom Classic que más uso.</span></li>
+      <li><span class="incl-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z M8 9.5h8 M8 12.5h5"/></svg></span><b>Grupo de WhatsApp</b><span>Para resolver dudas durante la semana del workshop.</span></li>
     </ul>
     <div class="bono" data-bono="ws-edicion"></div>
   </div>
@@ -2171,10 +2189,10 @@ main > section.sec:has(.sbs){padding-bottom:0}
   <div class="wrap include">
     <div class="head"><p class="label">Qué incluye</p><h2>Todo lo que <em>recibes.</em></h2></div>
     <ul class="incl">
-      <li><b>2 clases en vivo por Zoom</b><span>De 2 horas cada una, a las 7:00 pm hora de Chile<span class="localtime"></span>.</span></li>
-      <li><b>Grabaciones por 1 mes</b><span>Si no puedes conectarte, ves las clases cuando quieras durante un mes.</span></li>
-      <li><b>Plantilla editable</b><span>La base para diseñar tu guía de bienvenida y adaptarla a tus sesiones.</span></li>
-      <li><b>Grupo de WhatsApp</b><span>Para resolver dudas durante la semana del workshop.</span></li>
+      <li><span class="incl-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 7h12v10H3z M15 10l6-3v10l-6-3"/></svg></span><b>2 clases en vivo por Zoom</b><span>De 2 horas cada una, a las 7:00 pm hora de Chile<span class="localtime"></span>.</span></li>
+      <li><span class="incl-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 0 0 0-18z M10 8.5v7l6-3.5z"/></svg></span><b>Grabaciones por 1 mes</b><span>Si no puedes conectarte, ves las clases cuando quieras durante un mes.</span></li>
+      <li><span class="incl-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z M14 3v4h4 M9 12h6 M9 16h6"/></svg></span><b>Plantilla editable</b><span>La base para diseñar tu guía de bienvenida y adaptarla a tus sesiones.</span></li>
+      <li><span class="incl-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z M8 9.5h8 M8 12.5h5"/></svg></span><b>Grupo de WhatsApp</b><span>Para resolver dudas durante la semana del workshop.</span></li>
     </ul>
     <div class="bono" data-bono="ws-guia"></div>
   </div>
@@ -2395,12 +2413,12 @@ main > section.sec:has(.sbs){padding-bottom:0}
   <div class="wrap include">
     <div class="head"><p class="label">Qué incluye</p><h2>Todo lo que <em>recibes.</em></h2></div>
     <ul class="incl">
-      <li><b>4 clases en vivo por Zoom</b><span>Una por semana, de 2 horas, a las 7:00 pm hora de Chile<span class="localtime"></span>.</span></li>
-      <li><b>Clases grabadas</b><span>Videos con el contenido de cada tema, para avanzar a tu ritmo.</span></li>
-      <li><b>Acceso por 6 meses</b><span>A las clases en vivo grabadas y a todos los videos del curso.</span></li>
-      <li><b>Guías y plantillas</b><span>Material de apoyo para cada tema del curso.</span></li>
-      <li><b>Nivelación de cámara</b><span>Si necesitas reforzar el manejo de tu cámara, antes de empezar tienes un curso grabado de fundamentos fotográficos.</span></li>
-      <li><b>Grupo de WhatsApp</b><span>Para compartir y resolver dudas durante las 4 semanas.</span></li>
+      <li><span class="incl-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 7h12v10H3z M15 10l6-3v10l-6-3"/></svg></span><b>4 clases en vivo por Zoom</b><span>Una por semana, de 2 horas, a las 7:00 pm hora de Chile<span class="localtime"></span>.</span></li>
+      <li><span class="incl-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 0 0 0-18z M10 8.5v7l6-3.5z"/></svg></span><b>Clases grabadas</b><span>Videos con el contenido de cada tema, para avanzar a tu ritmo.</span></li>
+      <li><span class="incl-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h16v14H4z M4 10h16 M8 3v5 M16 3v5 M8 14h3"/></svg></span><b>Acceso por 6 meses</b><span>A las clases en vivo grabadas y a todos los videos del curso.</span></li>
+      <li><span class="incl-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z M14 3v4h4 M9 12h6 M9 16h6"/></svg></span><b>Guías y plantillas</b><span>Material de apoyo para cada tema del curso.</span></li>
+      <li><span class="incl-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 8h4l2-2.5h4L16 8h4v11H4z M12 10.5a3.2 3.2 0 1 0 0 6.4a3.2 3.2 0 0 0 0-6.4z"/></svg></span><b>Nivelación de cámara</b><span>Si necesitas reforzar el manejo de tu cámara, antes de empezar tienes un curso grabado de fundamentos fotográficos.</span></li>
+      <li><span class="incl-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z M8 9.5h8 M8 12.5h5"/></svg></span><b>Grupo de WhatsApp</b><span>Para compartir y resolver dudas durante las 4 semanas.</span></li>
     </ul>
   </div>
 </section>
@@ -2688,11 +2706,11 @@ main > section.sec:has(.sbs){padding-bottom:0}
   <div class="wrap include">
     <div class="head"><p class="label">Qué incluye</p><h2>Todo lo que <em>recibes.</em></h2></div>
     <ul class="incl">
-      <li><b>4 clases en vivo por Zoom</b><span>Una por semana, de 2 horas, a las 7:00 pm hora de Chile<span class="localtime"></span>.</span></li>
-      <li><b>Clases grabadas</b><span>Videos con el contenido de cada tema, para avanzar a tu ritmo.</span></li>
-      <li><b>Acceso por 6 meses</b><span>A las clases en vivo grabadas y a todos los videos del curso.</span></li>
-      <li><b>Guías y plantillas</b><span>Material de apoyo para cada tema del curso.</span></li>
-      <li><b>Grupo de WhatsApp</b><span>Para compartir y resolver dudas durante las 4 semanas.</span></li>
+      <li><span class="incl-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 7h12v10H3z M15 10l6-3v10l-6-3"/></svg></span><b>4 clases en vivo por Zoom</b><span>Una por semana, de 2 horas, a las 7:00 pm hora de Chile<span class="localtime"></span>.</span></li>
+      <li><span class="incl-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 0 0 0-18z M10 8.5v7l6-3.5z"/></svg></span><b>Clases grabadas</b><span>Videos con el contenido de cada tema, para avanzar a tu ritmo.</span></li>
+      <li><span class="incl-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h16v14H4z M4 10h16 M8 3v5 M16 3v5 M8 14h3"/></svg></span><b>Acceso por 6 meses</b><span>A las clases en vivo grabadas y a todos los videos del curso.</span></li>
+      <li><span class="incl-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z M14 3v4h4 M9 12h6 M9 16h6"/></svg></span><b>Guías y plantillas</b><span>Material de apoyo para cada tema del curso.</span></li>
+      <li><span class="incl-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z M8 9.5h8 M8 12.5h5"/></svg></span><b>Grupo de WhatsApp</b><span>Para compartir y resolver dudas durante las 4 semanas.</span></li>
     </ul>
   </div>
 </section>
@@ -2897,11 +2915,11 @@ main > section.sec:has(.sbs){padding-bottom:0}
   <div class="wrap include">
     <div class="head"><p class="label">Qué incluye</p><h2>Todo lo que <em>recibes.</em></h2></div>
     <ul class="incl">
-      <li><b>4 clases en vivo por Zoom</b><span>Una por semana, de 2 horas, a las 7:00 pm hora de Chile<span class="localtime"></span>.</span></li>
-      <li><b>Clases grabadas</b><span>Videos con el contenido de cada tema, para avanzar a tu ritmo.</span></li>
-      <li><b>Acceso por 6 meses</b><span>A las clases en vivo grabadas y a todos los videos del curso.</span></li>
-      <li><b>Guías y plantillas</b><span>Material de apoyo para cada tema del curso.</span></li>
-      <li><b>Grupo de WhatsApp</b><span>Para compartir y resolver dudas durante las 4 semanas.</span></li>
+      <li><span class="incl-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 7h12v10H3z M15 10l6-3v10l-6-3"/></svg></span><b>4 clases en vivo por Zoom</b><span>Una por semana, de 2 horas, a las 7:00 pm hora de Chile<span class="localtime"></span>.</span></li>
+      <li><span class="incl-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 0 0 0-18z M10 8.5v7l6-3.5z"/></svg></span><b>Clases grabadas</b><span>Videos con el contenido de cada tema, para avanzar a tu ritmo.</span></li>
+      <li><span class="incl-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h16v14H4z M4 10h16 M8 3v5 M16 3v5 M8 14h3"/></svg></span><b>Acceso por 6 meses</b><span>A las clases en vivo grabadas y a todos los videos del curso.</span></li>
+      <li><span class="incl-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z M14 3v4h4 M9 12h6 M9 16h6"/></svg></span><b>Guías y plantillas</b><span>Material de apoyo para cada tema del curso.</span></li>
+      <li><span class="incl-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z M8 9.5h8 M8 12.5h5"/></svg></span><b>Grupo de WhatsApp</b><span>Para compartir y resolver dudas durante las 4 semanas.</span></li>
     </ul>
   </div>
 </section>
