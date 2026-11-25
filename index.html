@@ -1448,6 +1448,51 @@ main > section.sec:has(.sbs){padding-bottom:0}
   .cover h1,.cover .lead,.cover .cover-sub,.cover .label{text-shadow:none !important}
   .cover .btn{align-self:stretch;text-align:center}
 }
+/* Mockup guía de bienvenida */
+.mk{position:relative;height:600px;margin-top:26px;overflow:hidden;background:#DCD6CD;border-radius:4px;user-select:none;-webkit-user-select:none}
+.mk-sheet{position:absolute;left:50%;top:50%;width:1400px;display:grid;grid-template-columns:repeat(6,200px);gap:26px;transform:translate(-50%,-50%) rotate(-9deg);pointer-events:none;filter:blur(.35px)}
+.mk-pg{background:#FBF9F6;height:260px;padding:16px 16px 14px;display:flex;flex-direction:column;gap:9px;overflow:hidden;box-shadow:0 2px 10px rgba(50,40,30,.10)}
+.mk-pg img{width:100%;height:96px;object-fit:cover;display:block}
+.mk-pg-full{padding:0}.mk-pg .mk-full{height:100%}
+.mk-h{margin:0;font-family:var(--f-display);font-size:15px;color:#3A332D;letter-spacing:.02em}
+.mk-scr{font-style:italic;font-size:24px}
+.mk-tx{display:flex;flex-direction:column;gap:6px}
+.mk-tx i{display:block;height:4px;border-radius:2px;background:#D9D2C8}
+.mk-tx i[style="width:0%"]{height:2px;background:transparent}
+.mk-toc{display:flex;flex-direction:column;gap:11px;margin-top:4px}
+.mk-toc span{display:flex;align-items:center;gap:8px;justify-content:space-between}
+.mk-toc i{display:block;height:4px;background:#D9D2C8;border-radius:2px}
+.mk-toc b{font-family:var(--f-display);font-style:italic;font-weight:400;font-size:11px;color:#93462F}
+.mk-pol{width:70% !important;height:84px !important;align-self:center;border:5px solid #fff;box-shadow:0 3px 10px rgba(0,0,0,.15);transform:rotate(3deg)}
+.mk-sw{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.mk-sw i{display:block;height:34px;background:var(--c)}
+.mk-pal{display:flex;gap:6px}.mk-pal i{flex:1;height:70px;background:var(--c);border-radius:40px 40px 4px 4px}
+.mk-two{display:grid;grid-template-columns:1fr 1fr;gap:6px}.mk-two img{height:120px}
+.mk-steps{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px}
+.mk-steps li{display:flex;gap:10px;align-items:flex-start}.mk-steps .mk-tx{flex:1;padding-top:5px}
+.mk-steps b{font-family:var(--f-display);font-style:italic;font-weight:400;color:#93462F;font-size:15px}
+.mk-tab{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:372px;height:500px;background:#26231F;border-radius:26px;padding:13px;box-shadow:0 30px 60px rgba(30,22,16,.35),0 6px 16px rgba(30,22,16,.2),inset 0 0 0 1.5px #4A4540}
+.mk-tab::before{content:"";position:absolute;top:5px;left:50%;width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:#3C3833}
+.mk-scr-in{height:100%;background:#F7F3EE;border-radius:14px;display:flex;flex-direction:column;align-items:center;padding:16px 22px 14px;text-align:center;overflow:hidden}
+.mk-logo{width:58px;height:auto;margin-bottom:-2px}
+.mk-brand{margin:0;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#3A332D;display:flex;flex-direction:column;gap:3px}
+.mk-brand small{font-size:7px;letter-spacing:.3em;color:#8C8279}
+.mk-cov{width:100%;height:220px;object-fit:cover;margin:12px 0 12px;display:block}
+.mk-pre{margin:0;font-family:var(--f-display);font-size:12px;letter-spacing:.42em;text-transform:uppercase;color:#6E655D}
+.mk-big{margin:2px 0 6px;font-family:var(--f-display);font-size:34px;letter-spacing:.2em;text-transform:uppercase;color:#4A433C;line-height:1;padding-left:.2em}
+.mk-sub{margin:0;font-size:10.5px;font-weight:700;letter-spacing:.12em;color:#3A332D}
+.mk-tag{margin:8px 0 0;font-family:var(--f-display);font-style:italic;font-size:10px;letter-spacing:.06em;color:#9A9088}
+@media (min-width:861px){
+  .mk{height:440px;margin-top:18px}
+  .mk-sheet{transform:translate(-50%,-50%) rotate(-9deg) scale(.8)}
+  .mk-tab{transform:translate(-50%,-50%) scale(.8)}
+  .sec:has(.mk) .gl-head{margin-bottom:14px}
+  main > section.sec:has(.mk){padding-block:36px}
+}
+@media (max-width:860px){
+  .mk{height:470px;margin-inline:calc(var(--gl,20px) * -1)}
+  .mk-sheet{transform:translate(-50%,-50%) rotate(-9deg) scale(.75)}
+  .mk-tab{transform:translate(-50%,-50%) scale(.82)}
+}
 [hidden]{display:none !important}
 </style>
 
@@ -2088,39 +2133,17 @@ main > section.sec:has(.sbs){padding-bottom:0}
       <li><span class="gl-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M4 7h4l2-2h4l2 2h4v12H4z M12 10a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7z"/></svg></span>Tus fotos y tu voz</li>
       <li><span class="gl-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M3 11l18-7-7 18-2-8z M12 14l9-10"/></svg></span>Lista para enviar</li>
     </ul>
-    <div class="gl" aria-label="Ejemplo de las páginas de una guía de bienvenida">
-      <div class="gp gp-meet">
-        <p class="gp-h">Conóceme</p>
-        <img src="fotos/bernardita.jpg" alt="" loading="lazy">
-        <p class="gp-txt">¡Qué alegría que estés aquí! En esta guía encontrarás todo lo que necesitas para disfrutar tu sesión.</p>
-        <p class="gp-sig">Con cariño</p>
-      </div>
-      <div class="gp gp-cover">
-        <p class="gp-kicker">Una guía para mis clientes</p>
-        <p class="gp-title">Bienvenida</p>
-        <img src="fotos/ternura.jpg" alt="" loading="lazy">
-        <p class="gp-kicker">Qué esperar, cómo prepararte y todos los detalles</p>
-      </div>
-      <div class="gp gp-steps">
-        <p class="gp-h">El proceso</p>
-        <ol>
-          <li><b>01</b><span>Reserva<small>Conversamos y agendamos tu fecha.</small></span></li>
-          <li><b>02</b><span>Preparación<small>Locación, vestuario y colores.</small></span></li>
-          <li><b>03</b><span>Tu sesión<small>Una tarde tranquila y entretenida.</small></span></li>
-          <li><b>04</b><span>La entrega<small>Tu galería, editada con cariño.</small></span></li>
-        </ol>
-      </div>
-      <div class="gp gp-wear">
-        <p class="gp-h">¿Qué ropa usar?</p>
-        <div class="gp-pics"><img src="fotos/calma.jpg" alt="" loading="lazy"><img src="fotos/g4.jpg" alt="" loading="lazy"></div>
-        <div class="gp-dots"><i style="--c:#E6DDD0"></i><i style="--c:#C9AE8F"></i><i style="--c:#9C7A5E"></i><i style="--c:#8E9188"></i><i style="--c:#C98B4E"></i></div>
-        <p class="gp-txt">Colores suaves y naturales, que conversen con el lugar.</p>
-      </div>
-      <div class="gp gp-deliver">
-        <p class="gp-h">La entrega</p>
-        <img src="fotos/s4-04.jpg" alt="" loading="lazy">
-        <p class="gp-txt">Galería privada · Fotos editadas · Impresiones Fine Art</p>
-      </div>
+    <div class="mk" aria-label="Ejemplo de una guía de bienvenida: portada y páginas interiores">
+      <div class="mk-sheet" aria-hidden="true"><div class="mk-pg"><p class="mk-h mk-scr">Índice</p><div class="mk-toc"><span><i style="width:55%"></i><b>03</b></span><span><i style="width:68%"></i><b>05</b></span><span><i style="width:48%"></i><b>07</b></span><span><i style="width:62%"></i><b>09</b></span><span><i style="width:52%"></i><b>11</b></span><span><i style="width:70%"></i><b>13</b></span><span><i style="width:45%"></i><b>15</b></span><span><i style="width:58%"></i><b>17</b></span></div></div><div class="mk-pg"><img src="fotos/s1-03.jpg" alt=""><p class="mk-h">Bienvenida</p><div class="mk-tx"><i style="width:96%"></i><i style="width:88%"></i><i style="width:92%"></i><i style="width:60%"></i></div></div><div class="mk-pg"><p class="mk-h">Antes de la sesión</p><div class="mk-tx"><i style="width:94%"></i><i style="width:90%"></i><i style="width:96%"></i><i style="width:70%"></i><i style="width:0%"></i><i style="width:92%"></i><i style="width:86%"></i><i style="width:94%"></i><i style="width:50%"></i></div><img class="mk-pol" src="fotos/bernardita.jpg" alt=""></div><div class="mk-pg mk-pg-full"><img class="mk-full" src="fotos/s2-04.jpg" alt=""></div><div class="mk-pg"><p class="mk-h">¿Qué ropa usar?</p><div class="mk-sw"><i style="--c:#ECE6DC"></i><i style="--c:#D8C7B0"></i><i style="--c:#B79B7C"></i><i style="--c:#8E9188"></i><i style="--c:#C98B4E"></i><i style="--c:#7D8FA3"></i></div><div class="mk-tx"><i style="width:90%"></i><i style="width:84%"></i><i style="width:60%"></i></div></div><div class="mk-pg"><div class="mk-two"><img src="fotos/s3-02.jpg" alt=""><img src="fotos/s3-05.jpg" alt=""></div><p class="mk-h">La locación</p><div class="mk-tx"><i style="width:92%"></i><i style="width:80%"></i></div></div><div class="mk-pg"><p class="mk-h">Durante la sesión</p><div class="mk-tx"><i style="width:92%"></i><i style="width:96%"></i><i style="width:88%"></i><i style="width:70%"></i><i style="width:0%"></i><i style="width:94%"></i><i style="width:90%"></i><i style="width:62%"></i></div><img src="fotos/s2-07.jpg" alt=""></div><div class="mk-pg mk-pg-full"><img class="mk-full" src="fotos/s4-05.jpg" alt=""></div><div class="mk-pg"><p class="mk-h">La entrega</p><ol class="mk-steps"><li><b>01</b><div class="mk-tx"><i style="width:80%"></i><i style="width:60%"></i></div></li><li><b>02</b><div class="mk-tx"><i style="width:86%"></i><i style="width:50%"></i></div></li><li><b>03</b><div class="mk-tx"><i style="width:76%"></i><i style="width:64%"></i></div></li></ol></div><div class="mk-pg"><img src="fotos/s1-06.jpg" alt=""><p class="mk-h">Preguntas frecuentes</p><div class="mk-tx"><i style="width:94%"></i><i style="width:86%"></i><i style="width:90%"></i><i style="width:58%"></i></div></div><div class="mk-pg"><p class="mk-h">Paleta de colores</p><div class="mk-pal"><i style="--c:#D8C7B0"></i><i style="--c:#9C7A5E"></i><i style="--c:#C9AE8F"></i><i style="--c:#8B918A"></i></div><div class="mk-tx"><i style="width:88%"></i><i style="width:70%"></i></div></div><div class="mk-pg mk-pg-full"><img class="mk-full" src="fotos/s3-07.jpg" alt=""></div><div class="mk-pg"><p class="mk-h mk-scr">Índice</p><div class="mk-toc"><span><i style="width:55%"></i><b>03</b></span><span><i style="width:68%"></i><b>05</b></span><span><i style="width:48%"></i><b>07</b></span><span><i style="width:62%"></i><b>09</b></span><span><i style="width:52%"></i><b>11</b></span><span><i style="width:70%"></i><b>13</b></span><span><i style="width:45%"></i><b>15</b></span><span><i style="width:58%"></i><b>17</b></span></div></div><div class="mk-pg"><img src="fotos/s1-03.jpg" alt=""><p class="mk-h">Bienvenida</p><div class="mk-tx"><i style="width:96%"></i><i style="width:88%"></i><i style="width:92%"></i><i style="width:60%"></i></div></div><div class="mk-pg"><p class="mk-h">Antes de la sesión</p><div class="mk-tx"><i style="width:94%"></i><i style="width:90%"></i><i style="width:96%"></i><i style="width:70%"></i><i style="width:0%"></i><i style="width:92%"></i><i style="width:86%"></i><i style="width:94%"></i><i style="width:50%"></i></div><img class="mk-pol" src="fotos/bernardita.jpg" alt=""></div><div class="mk-pg mk-pg-full"><img class="mk-full" src="fotos/s2-04.jpg" alt=""></div><div class="mk-pg"><p class="mk-h">¿Qué ropa usar?</p><div class="mk-sw"><i style="--c:#ECE6DC"></i><i style="--c:#D8C7B0"></i><i style="--c:#B79B7C"></i><i style="--c:#8E9188"></i><i style="--c:#C98B4E"></i><i style="--c:#7D8FA3"></i></div><div class="mk-tx"><i style="width:90%"></i><i style="width:84%"></i><i style="width:60%"></i></div></div><div class="mk-pg"><div class="mk-two"><img src="fotos/s3-02.jpg" alt=""><img src="fotos/s3-05.jpg" alt=""></div><p class="mk-h">La locación</p><div class="mk-tx"><i style="width:92%"></i><i style="width:80%"></i></div></div><div class="mk-pg"><p class="mk-h">Durante la sesión</p><div class="mk-tx"><i style="width:92%"></i><i style="width:96%"></i><i style="width:88%"></i><i style="width:70%"></i><i style="width:0%"></i><i style="width:94%"></i><i style="width:90%"></i><i style="width:62%"></i></div><img src="fotos/s2-07.jpg" alt=""></div><div class="mk-pg mk-pg-full"><img class="mk-full" src="fotos/s4-05.jpg" alt=""></div><div class="mk-pg"><p class="mk-h">La entrega</p><ol class="mk-steps"><li><b>01</b><div class="mk-tx"><i style="width:80%"></i><i style="width:60%"></i></div></li><li><b>02</b><div class="mk-tx"><i style="width:86%"></i><i style="width:50%"></i></div></li><li><b>03</b><div class="mk-tx"><i style="width:76%"></i><i style="width:64%"></i></div></li></ol></div><div class="mk-pg"><img src="fotos/s1-06.jpg" alt=""><p class="mk-h">Preguntas frecuentes</p><div class="mk-tx"><i style="width:94%"></i><i style="width:86%"></i><i style="width:90%"></i><i style="width:58%"></i></div></div><div class="mk-pg"><p class="mk-h">Paleta de colores</p><div class="mk-pal"><i style="--c:#D8C7B0"></i><i style="--c:#9C7A5E"></i><i style="--c:#C9AE8F"></i><i style="--c:#8B918A"></i></div><div class="mk-tx"><i style="width:88%"></i><i style="width:70%"></i></div></div><div class="mk-pg mk-pg-full"><img class="mk-full" src="fotos/s3-07.jpg" alt=""></div></div>
+      <div class="mk-tab"><div class="mk-scr-in">
+        <img class="mk-logo" src="fotos/logo-b.png" alt="">
+        <p class="mk-brand">Bernardita Aguirre<small>Fotografía Fine Art</small></p>
+        <img class="mk-cov" src="fotos/s4-01.jpg" alt="Portada de una guía de bienvenida con una foto de familia en otoño">
+        <p class="mk-pre">Guía de</p>
+        <p class="mk-big">Bienvenida</p>
+        <p class="mk-sub">Qué esperar + cómo prepararte</p>
+        <p class="mk-tag">Sesiones naturales, cercanas y llenas de conexión.</p>
+      </div></div>
     </div>
   </div>
 </section>
