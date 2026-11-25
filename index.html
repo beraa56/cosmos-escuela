@@ -1500,13 +1500,12 @@ main > section.sec:has(.sbs){padding-bottom:0}
 .mk-card .mk-tab{transition:transform .5s cubic-bezier(.2,.7,.2,1)}
 /* Tarjeta paleta de color */
 .wc-pal{background:#2A2521}
-.pal-ph{position:absolute;inset:0;background-size:cover;background-position:58% 40%}
-.pal-col{position:absolute;top:0;right:0;width:30%;bottom:0;display:flex;flex-direction:column}.pal-col::after{content:"";flex:0 0 45%}
-.pal-sw{flex:1;position:relative;background:var(--c);opacity:.78;backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);display:flex;flex-direction:column;justify-content:flex-start;gap:3px;padding:12px 14px;justify-content:center;color:var(--t);overflow:hidden;transition:flex .5s cubic-bezier(.2,.7,.2,1)}
-.pal-sw::before{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .45 0 0 0 0 .4 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.35;mix-blend-mode:multiply;pointer-events:none}
-.pal-sw b{position:relative;font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase}
-.pal-sw span{position:relative;font-size:9.5px;letter-spacing:.14em;opacity:.8}
-.wcover:hover .pal-sw:nth-child(2){flex:1.5}
+.pal-ph{position:absolute;inset:0;background-size:cover;background-position:60% 40%}
+.pal-col{position:absolute;top:22px;left:22px;display:flex;gap:9px;z-index:2}
+.pal-col::after{content:none}
+.pal-sw{width:30px;height:30px;border-radius:50%;background:var(--c);opacity:.92;box-shadow:0 0 0 1.5px rgba(255,255,255,.55),0 4px 10px rgba(0,0,0,.25);transition:transform .4s cubic-bezier(.34,1.56,.64,1)}
+.wcover:hover .pal-sw{transform:translateY(-3px)}
+.wcover:hover .pal-sw:nth-child(2){transition-delay:.05s}.wcover:hover .pal-sw:nth-child(3){transition-delay:.1s}.wcover:hover .pal-sw:nth-child(4){transition-delay:.15s}
 .wc-pal::before{z-index:1}
 .wc-pal .wc-txt{z-index:2}
 [hidden]{display:none !important}
