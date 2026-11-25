@@ -1415,6 +1415,27 @@ main > section.sec:has(.sbs){padding-bottom:0}
 .home-cover .cover-in > *{max-width:540px}
 .home-cover h1{font-size:clamp(42px,4.4vw,64px)}}
 @media (max-width:860px){.home-cover{background-position:83% 30% !important;align-items:flex-end;min-height:calc(100svh - var(--navh,90px)) !important}.home-cover::before{background:linear-gradient(180deg,rgba(28,22,18,0) 35%,rgba(28,22,18,.55) 62%,rgba(28,22,18,.85) 100%)}.home-cover .cover-in{padding-block:32px 48px}}
+/* Zigzag COSMOS: movimiento al pasar y versión celular igual a escritorio */
+.zz-n{cursor:default}
+.zz-n .zz-dot{transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .35s}
+.zz-n .zz-t b{transition:color .3s}
+.zz-n:hover .zz-dot,.zz-n:active .zz-dot{transform:translateY(-7px) scale(1.08);box-shadow:0 14px 24px rgba(60,40,25,.18)}
+.zz-n:hover .zz-t b,.zz-n:active .zz-t b{color:var(--accent,#93462F)}
+@media (prefers-reduced-motion:no-preference){.zz-n:hover .zz-dot{animation:zzhop .6s cubic-bezier(.34,1.56,.64,1)}}
+@keyframes zzhop{0%{transform:translateY(0) scale(1)}45%{transform:translateY(-11px) scale(1.1) rotate(-4deg)}75%{transform:translateY(-5px) scale(1.07) rotate(2deg)}100%{transform:translateY(-7px) scale(1.08)}}
+#metodo .zz{margin-bottom:40px !important}
+@media (max-width:860px){
+  .zz{height:272px !important;margin:0 8px 34px !important;--r:22px}
+  #metodo .zz{height:272px !important}
+  .zz-lines{display:block !important}
+  .zz-list{display:block !important}
+  .zz-n,.zz-n.rv,.zz-n.rv.in{position:absolute !important;left:var(--x);transform:translateX(-50%) !important;width:30% !important;gap:6px !important;text-align:center !important;align-items:center}
+  .zz-n.up{flex-direction:column-reverse !important;top:auto !important;bottom:calc(64% - var(--r)) !important}
+  .zz-n.down{flex-direction:column !important;bottom:auto !important;top:calc(72% - var(--r)) !important}
+  .zz-dot{width:44px !important;height:44px !important;font-size:22px !important}
+  .zz-t{font-size:11.5px !important;line-height:1.35}
+  .zz-t b{font-size:10px !important;letter-spacing:.08em}
+}
 [hidden]{display:none !important}
 </style>
 
