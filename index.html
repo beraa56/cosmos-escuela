@@ -1436,6 +1436,18 @@ main > section.sec:has(.sbs){padding-bottom:0}
   .zz-t{font-size:11.5px !important;line-height:1.35}
   .zz-t b{font-size:10px !important;letter-spacing:.08em}
 }
+/* Celular: foto arriba despejada, texto abajo */
+.cover-ph{display:none}
+@media (max-width:860px){
+  .cover{display:block !important;min-height:0 !important;height:auto !important;max-height:none !important;aspect-ratio:auto !important;background-image:none !important;background-color:#2A2521 !important}
+  .cover::before,.home-cover::before{display:none !important}
+  .cover-ph{display:block;position:relative;height:clamp(300px,96vw,460px);background-repeat:no-repeat;background-size:cover;background-position:50% 40%}
+  .cover-ph::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:80px;background:linear-gradient(rgba(42,37,33,0),#2A2521)}
+  .cover .cover-in{padding:6px var(--gr,20px) 44px var(--gl,20px) !important;gap:16px !important;align-items:flex-start;text-align:left;max-width:none}
+  .cover .cover-in > *{max-width:none !important}
+  .cover h1,.cover .lead,.cover .cover-sub,.cover .label{text-shadow:none !important}
+  .cover .btn{align-self:stretch;text-align:center}
+}
 [hidden]{display:none !important}
 </style>
 
@@ -3331,6 +3343,29 @@ const CARRUSELES = {
       if (intro) intro.classList.add("no-photo");
     }
   });
+
+
+  // Celular: foto del banner arriba, encuadrada en las personas
+  (function () {
+    const CX = { "inicio": .71, "workshop-color": .60, "workshop-edicion": .62, "workshop-guia": .69, "idea-al-disparo": .73, "edicion": .85, "produccion": .59 };
+    const items = [];
+    document.querySelectorAll(".cover[data-photo]").forEach(function (el) {
+      const src = FOTOS[el.dataset.photo]; if (!src) return;
+      const ph = document.createElement("div"); ph.className = "cover-ph"; ph.setAttribute("aria-hidden", "true");
+      ph.style.backgroundImage = "url('" + src + "')";
+      el.insertBefore(ph, el.firstChild);
+      const it = { ph: ph, cx: CX[el.dataset.photo] || .5, r: 0 }; items.push(it);
+      const im = new Image(); im.onload = function () { it.r = im.naturalWidth / im.naturalHeight; place(it); }; im.src = src;
+    });
+    function place(it) {
+      const w = it.ph.clientWidth, h = it.ph.clientHeight; if (!w || !h || !it.r) return;
+      const W = Math.max(w, h * it.r);
+      const p = W > w ? Math.min(1, Math.max(0, (it.cx * W - w / 2) / (W - w))) : .5;
+      it.ph.style.backgroundPosition = (p * 100).toFixed(1) + "% 40%";
+    }
+    function all() { items.forEach(place); }
+    window.addEventListener("resize", all); window.addEventListener("hashchange", function () { setTimeout(all, 50); });
+  })();
 
   const titles = {
     "inicio": "COSMOS Escuela Online",
