@@ -1668,6 +1668,20 @@ html,body{overflow-x:clip}
 /* Celular: alto fijo de las tarjetas de workshops (Safari a veces no respeta aspect-ratio y las corta) */
 @media (max-width:600px){.wcovers .wc-img,.wcovers .wc-img.wc-ba{aspect-ratio:auto !important;height:calc((100vw - var(--gl,20px) - var(--gr,20px) - 22px) * 1.25) !important;max-height:none !important;flex:none}}
 .g-idea .g-track{animation-duration:55s}
+/* Tarjetas de workshops: el nombre va bajo la foto, no encima */
+.wcovers .wc-img::before{display:none}
+.wcovers .wc-txt{position:static;padding:0;margin-top:6px;gap:6px;color:var(--ink);text-shadow:none !important;text-decoration:none}
+.wcovers .wc-label{color:var(--accent)}
+.wcovers .wc-lvl{display:inline;margin:0;font-size:inherit;font-weight:400;letter-spacing:.06em;color:var(--muted);opacity:1}
+.wcovers .wc-lvl::before{content:" · "}
+.wcovers .wc-txt h3{color:var(--ink);font-size:clamp(22px,1.9vw,27px)}
+.wcovers .wc-txt h3 em{color:var(--accent)}
+.wcovers a.wc-txt:hover h3,.wcover:hover .wc-txt h3{text-decoration:none;color:var(--btn)}
+.wcovers .wc-txt h3{transition:color .3s}
+@media (min-width:861px){.wcovers .wc-img,.wcovers .wc-img.wc-ba{aspect-ratio:10/9 !important}}
+.wcovers .wc-mock .mk-card .mk-tab{top:47%;transform:translate(-50%,-50%) scale(.36) !important}
+.wcover:hover .wc-mock .mk-card .mk-tab,.wcover.tch .wc-mock .mk-card .mk-tab{transform:translate(-50%,-53%) scale(.37) !important}
+.wcovers .wc-mock .mk-card .mk-sheet{top:50%}
 [hidden]{display:none !important}
 </style>
 
@@ -1791,8 +1805,9 @@ html,body{overflow-x:clip}
     <div class="wcovers">
       <a class="wcover" href="#workshop-color">
         <div class="wc-img wc-pal"><div class="pal-ph" style="background-image:url('fotos/workshop-color.jpg')"></div><div class="pal-col" aria-hidden="true"><div class="pal-sw" style="--c:#B4B2AA;--t:#3A3631"></div><div class="pal-sw" style="--c:#C9A043;--t:#3A2E18"></div><div class="pal-sw" style="--c:#6E4A38;--t:#F3E9DC"></div><div class="pal-sw" style="--c:#55543A;--t:#F3E9DC"></div></div>
-          <div class="wc-txt"><p class="wc-label">Workshop · Fotografía · 3 días<span class="wc-lvl">Todos los niveles</span></p><h3>Construye una paleta de color <em>que transmita una emoción</em></h3></div>
+          
         </div>
+        <div class="wc-txt"><p class="wc-label">Workshop · Fotografía · 3 días<span class="wc-lvl">Todos los niveles</span></p><h3>Construye una paleta de color <em>que transmita una emoción</em></h3></div>
         <p class="soft">Elige una emoción, construye su paleta desde la locación y llévala a una foto real.</p>
         <span class="more">Quiero saber más →</span>
       </a>
@@ -1803,8 +1818,9 @@ html,body{overflow-x:clip}
           <span class="ba-tag wc-t1">Antes</span><span class="ba-tag wc-t2">Después</span>
           <span class="ba-line" aria-hidden="true"></span>
           <input type="range" min="0" max="100" value="50" aria-label="Comparar antes y después" id="ba-inicio">
-          <a class="wc-txt" href="#workshop-edicion"><p class="wc-label">Workshop · Edición · 3 días<span class="wc-lvl">Todos los niveles</span></p><h3>Simplifica tu edición <em>Fine Art</em></h3></a>
+          
         </div>
+        <a class="wc-txt" href="#workshop-edicion"><p class="wc-label">Workshop · Edición · 3 días<span class="wc-lvl">Todos los niveles</span></p><h3>Simplifica tu edición <em>Fine Art</em></h3></a>
         <p class="soft">Pasos simples para editar sin complicarte, aplicados en tus propias fotos. Desliza la foto para ver el antes y después.</p>
         <a class="more" href="#workshop-edicion">Quiero saber más →</a>
       </div>
@@ -1819,8 +1835,9 @@ html,body{overflow-x:clip}
         <p class="mk-sub">Qué esperar + cómo prepararte</p>
         <p class="mk-tag">Sesiones naturales, cercanas y llenas de conexión.</p>
       </div></div></div>
-          <div class="wc-txt"><p class="wc-label">Workshop · Producción · 2 días<span class="wc-lvl">Todos los niveles</span></p><h3>Diseña una guía de bienvenida <em>para tus clientes</em></h3></div>
+          
         </div>
+        <div class="wc-txt"><p class="wc-label">Workshop · Producción · 2 días<span class="wc-lvl">Todos los niveles</span></p><h3>Diseña una guía de bienvenida <em>para tus clientes</em></h3></div>
         <p class="soft">Crea la guía que prepara a tus clientes antes de cada sesión.</p>
         <span class="more">Quiero saber más →</span>
       </a>
