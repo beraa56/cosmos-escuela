@@ -1659,6 +1659,18 @@ html,body{overflow-x:clip}
 .wcovers .wc-label{font-weight:400;letter-spacing:.06em;text-transform:none;font-size:14px;color:var(--muted)}
 .wcovers .wc-label i{font-style:normal;margin:0 3px;color:#C9B8A8}
 .wcovers .wcover{gap:12px}
+/* Lo que consigues con COSMOS */
+.lg-head{text-align:center;margin-inline:auto}
+.logros{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line)}
+.logros li{display:flex;flex-direction:column;align-items:flex-start;gap:8px;padding:30px 30px 32px;border-bottom:1px solid var(--line);transition:background .35s}
+.logros li:not(:nth-child(3n+1)){border-left:1px solid var(--line)}
+.logros li:hover,.logros li.tch{background:#F8F4EF}
+.lg-ic{display:flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;background:#F4E4DD;color:var(--accent);margin-bottom:6px;transition:transform .4s cubic-bezier(.34,1.56,.64,1)}
+.logros li:hover .lg-ic,.logros li.tch .lg-ic{transform:translateY(-4px) rotate(-6deg)}
+.lg-ic svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.logros b{font-family:var(--f-display);font-weight:400;font-size:clamp(21px,1.7vw,25px);line-height:1.2;color:var(--ink)}
+.lg-d{font-size:16px;line-height:1.55;color:var(--muted)}
+@media (max-width:860px){.logros{grid-template-columns:1fr 1fr}.logros li{padding:20px 16px 22px}.logros li:not(:nth-child(3n+1)){border-left:0}.logros li:nth-child(2n){border-left:1px solid var(--line)}.logros b{font-size:18px}.lg-d{font-size:14px}.lg-ic{width:40px;height:40px}}
 [hidden]{display:none !important}
 </style>
 
@@ -1894,6 +1906,13 @@ html,body{overflow-x:clip}
       <figure class="q"><blockquote>COSMOS es el curso de fotografía más completo que pudiera imaginar. No solo me dio conocimiento, sino que también me hizo creer en mí. A través de la búsqueda de mi sello único pude reencontrarme conmigo misma como artista.</blockquote><figcaption>Mónica V.<span>Alumna de COSMOS</span></figcaption></figure>
     </div>
     <figure class="group-photo"><img src="fotos/alumnos.jpg" alt="Grupo de alumnos con sus cámaras en uno de mis workshops" loading="lazy"><figcaption>Alumnos en uno de mis workshops.</figcaption></figure>
+  </div>
+</section>
+
+<section class="sec logros-sec">
+  <div class="wrap">
+    <div class="head lg-head"><p class="label">Lo que consigues con COSMOS</p><h2>Lo que cambia <em>cuando aplicas mi método.</em></h2></div>
+    <ul class="logros"><li><span class="lg-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h12M8 12h12M8 18h12"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/></svg></span><b>Orden</b><span class="lg-d">Un proceso claro, paso a paso, desde la idea hasta la entrega.</span></li><li><span class="lg-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg></span><b>Criterio propio</b><span class="lg-d">Sabes por qué tomas cada decisión, sin depender de la suerte.</span></li><li><span class="lg-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg></span><b>Fotos con intención</b><span class="lg-d">Cada imagen con un mensaje claro, pensada antes de disparar.</span></li><li><span class="lg-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="10" r="6"/><path d="m8.5 15-1.5 6 5-2.5 5 2.5-1.5-6"/><path d="m12 7 .9 1.9 2 .3-1.5 1.4.4 2-1.8-1-1.8 1 .4-2-1.5-1.4 2-.3z"/></svg></span><b>Un sello que te destaca</b><span class="lg-d">Fotos que se reconocen como tuyas, distintas a las de todos.</span></li><li><span class="lg-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12l3 6-9 12L3 9z"/><path d="M3 9h18M9 3l3 18 3-18"/></svg></span><b>Trabajo de primera calidad</b><span class="lg-d">Un acabado cuidado en cada detalle, listo para imprimir y entregar.</span></li><li><span class="lg-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></span><b>Clientes felices</b><span class="lg-d">Familias que se sienten cuidadas, te recomiendan y vuelven.</span></li></ul>
   </div>
 </section>
 
@@ -3340,7 +3359,7 @@ const CARRUSELES = {
       [".head > p, .lead, .note", "rv-fade", false],
       [".pain > .stack, .intro .photo, .split-text > *, .mood-wrap > .stack, .ba-wrap > .stack, .elem-wrap > .head, .method-wrap > .head", "rv-left", false],
       [".pain > ul, .intro .text, .mood, .board, .ba-wrap > .ba, .ba-wrap > .slider, .ba-wrap > .guide-mock, .orbit", "rv-right", false],
-      [".cards > *, .wcovers > *, .bag-grid > *, .tr-grid > *, .emos > *, .others > *, .quotes > *, .g-grid > img, .method.acro > li, .cacc > .cacc-i, .incl > li, .faqs > details, .transform > .t-row, .bts > figure, .cprog > li, .mx-gains > li, .gl-feats > li, .ccards > .ccard, .st-mini > .st-line, .story > div, .foot-in > *, .bonuses > .bonus, .vs > .vs-col, .nums > li, .ses-tabs > *, .trio > div, .stats > .stat", "", true],
+      [".cards > *, .wcovers > *, .bag-grid > *, .tr-grid > *, .emos > *, .others > *, .quotes > *, .g-grid > img, .method.acro > li, .cacc > .cacc-i, .incl > li, .faqs > details, .transform > .t-row, .bts > figure, .cprog > li, .mx-gains > li, .gl-feats > li, .ccards > .ccard, .logros > li, .st-mini > .st-line, .story > div, .foot-in > *, .bonuses > .bonus, .vs > .vs-col, .nums > li, .ses-tabs > *, .trio > div, .stats > .stat", "", true],
       [".result, .bono, .upsell, .gl, .quote-one, .classes, .ses-pane, .compare, .final, .split-photo", "", false]
     ];
     const io = new IntersectionObserver(function (entries) {
@@ -3566,7 +3585,7 @@ const CARRUSELES = {
     const mid = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) { en.target.classList.toggle("tch", en.isIntersecting); });
     }, { rootMargin: "-38% 0px -38% 0px", threshold: 0 });
-    document.querySelectorAll(".wcover, .ccard, .incl > li, .mz-i").forEach(function (el) { mid.observe(el); });
+    document.querySelectorAll(".wcover, .ccard, .incl > li, .mz-i, .logros > li").forEach(function (el) { mid.observe(el); });
     // Zigzag COSMOS: las letras saltan una tras otra (C, O, S, M, O, S) al aparecer, y cada una al tocarla
     function hop(li, ms) { li.classList.remove("tch"); void li.offsetWidth; li.classList.add("tch"); clearTimeout(li._t); li._t = setTimeout(function () { li.classList.remove("tch"); }, ms || 900); }
     const zio = new IntersectionObserver(function (entries) {
