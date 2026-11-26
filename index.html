@@ -1682,6 +1682,17 @@ html,body{overflow-x:clip}
 .wcovers .wc-mock .mk-card .mk-tab{top:47%;transform:translate(-50%,-50%) scale(.36) !important}
 .wcover:hover .wc-mock .mk-card .mk-tab,.wcover.tch .wc-mock .mk-card .mk-tab{transform:translate(-50%,-53%) scale(.37) !important}
 .wcovers .wc-mock .mk-card .mk-sheet{top:50%}
+/* Tarjetas de workshops: área arriba con su color, duración y nivel abajo */
+:root{--a-foto:#A9772E;--a-foto-bg:#F5EBDD;--a-edi:#5F7468;--a-edi-bg:#E7EDE8;--a-prod:#93462F;--a-prod-bg:#F4E4DD}
+.wc-top{margin:0 0 2px;display:flex;align-items:center;gap:10px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.area{display:inline-flex;align-items:center;gap:7px;padding:5px 12px 5px 10px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.area::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}
+.a-foto{color:var(--a-foto);background:var(--a-foto-bg)}
+.a-edi{color:var(--a-edi);background:var(--a-edi-bg)}
+.a-prod{color:var(--a-prod);background:var(--a-prod-bg)}
+.wcovers .wc-label{font-weight:400;letter-spacing:.06em;text-transform:none;font-size:14px;color:var(--muted)}
+.wcovers .wc-label i{font-style:normal;margin:0 3px;color:#C9B8A8}
+.wcovers .wcover{gap:12px}
 [hidden]{display:none !important}
 </style>
 
@@ -1804,14 +1815,16 @@ html,body{overflow-x:clip}
     </div>
     <div class="wcovers">
       <a class="wcover" href="#workshop-color">
+        <p class="wc-top">Workshop <span class="area a-foto">Fotografía</span></p>
         <div class="wc-img wc-pal"><div class="pal-ph" style="background-image:url('fotos/workshop-color.jpg')"></div><div class="pal-col" aria-hidden="true"><div class="pal-sw" style="--c:#B4B2AA;--t:#3A3631"></div><div class="pal-sw" style="--c:#C9A043;--t:#3A2E18"></div><div class="pal-sw" style="--c:#6E4A38;--t:#F3E9DC"></div><div class="pal-sw" style="--c:#55543A;--t:#F3E9DC"></div></div>
           
         </div>
-        <div class="wc-txt"><p class="wc-label">Workshop · Fotografía · 3 días<span class="wc-lvl">Todos los niveles</span></p><h3>Construye una paleta de color <em>que transmita una emoción</em></h3></div>
+        <div class="wc-txt"><p class="wc-label">3 días <i>·</i> Todos los niveles</p><h3>Construye una paleta de color <em>que transmita una emoción</em></h3></div>
         <p class="soft">Elige una emoción, construye su paleta desde la locación y llévala a una foto real.</p>
         <span class="more">Quiero saber más →</span>
       </a>
       <div class="wcover">
+        <p class="wc-top">Workshop <span class="area a-edi">Edición</span></p>
         <div class="wc-img wc-ba ba" style="--pos:50%">
           <img src="fotos/antes.jpg" alt="Foto antes de editar" loading="lazy" class="ba-img">
           <img src="fotos/despues.jpg" alt="La misma foto después de editar" loading="lazy" class="ba-img ba-after">
@@ -1820,11 +1833,12 @@ html,body{overflow-x:clip}
           <input type="range" min="0" max="100" value="50" aria-label="Comparar antes y después" id="ba-inicio">
           
         </div>
-        <a class="wc-txt" href="#workshop-edicion"><p class="wc-label">Workshop · Edición · 3 días<span class="wc-lvl">Todos los niveles</span></p><h3>Simplifica tu edición <em>Fine Art</em></h3></a>
+        <a class="wc-txt" href="#workshop-edicion"><p class="wc-label">3 días <i>·</i> Todos los niveles</p><h3>Simplifica tu edición <em>Fine Art</em></h3></a>
         <p class="soft">Pasos simples para editar sin complicarte, aplicados en tus propias fotos. Desliza la foto para ver el antes y después.</p>
         <a class="more" href="#workshop-edicion">Quiero saber más →</a>
       </div>
       <a class="wcover" href="#workshop-guia">
+        <p class="wc-top">Workshop <span class="area a-prod">Producción</span></p>
         <div class="wc-img wc-mock">
           <div class="mk mk-card" aria-hidden="true"><div class="mk-sheet"><div class="mk-pg"><p class="mk-h mk-scr">Índice</p><div class="mk-toc"><span><i style="width:55%"></i><b>03</b></span><span><i style="width:68%"></i><b>05</b></span><span><i style="width:48%"></i><b>07</b></span><span><i style="width:62%"></i><b>09</b></span><span><i style="width:52%"></i><b>11</b></span><span><i style="width:70%"></i><b>13</b></span><span><i style="width:45%"></i><b>15</b></span><span><i style="width:58%"></i><b>17</b></span></div></div><div class="mk-pg"><img src="fotos/s1-03.jpg" alt=""><p class="mk-h">Bienvenida</p><div class="mk-tx"><i style="width:96%"></i><i style="width:88%"></i><i style="width:92%"></i><i style="width:60%"></i></div></div><div class="mk-pg"><p class="mk-h">Antes de la sesión</p><div class="mk-tx"><i style="width:94%"></i><i style="width:90%"></i><i style="width:96%"></i><i style="width:70%"></i><i style="width:0%"></i><i style="width:92%"></i><i style="width:86%"></i><i style="width:94%"></i><i style="width:50%"></i></div><img class="mk-pol" src="fotos/bernardita.jpg" alt=""></div><div class="mk-pg mk-pg-full"><img class="mk-full" src="fotos/s2-04.jpg" alt=""></div><div class="mk-pg"><p class="mk-h">¿Qué ropa usar?</p><div class="mk-sw"><i style="--c:#ECE6DC"></i><i style="--c:#D8C7B0"></i><i style="--c:#B79B7C"></i><i style="--c:#8E9188"></i><i style="--c:#C98B4E"></i><i style="--c:#7D8FA3"></i></div><div class="mk-tx"><i style="width:90%"></i><i style="width:84%"></i><i style="width:60%"></i></div></div><div class="mk-pg"><div class="mk-two"><img src="fotos/s3-02.jpg" alt=""><img src="fotos/s3-05.jpg" alt=""></div><p class="mk-h">La locación</p><div class="mk-tx"><i style="width:92%"></i><i style="width:80%"></i></div></div><div class="mk-pg"><p class="mk-h">Durante la sesión</p><div class="mk-tx"><i style="width:92%"></i><i style="width:96%"></i><i style="width:88%"></i><i style="width:70%"></i><i style="width:0%"></i><i style="width:94%"></i><i style="width:90%"></i><i style="width:62%"></i></div><img src="fotos/s2-07.jpg" alt=""></div><div class="mk-pg mk-pg-full"><img class="mk-full" src="fotos/s4-05.jpg" alt=""></div><div class="mk-pg"><p class="mk-h">La entrega</p><ol class="mk-steps"><li><b>01</b><div class="mk-tx"><i style="width:80%"></i><i style="width:60%"></i></div></li><li><b>02</b><div class="mk-tx"><i style="width:86%"></i><i style="width:50%"></i></div></li><li><b>03</b><div class="mk-tx"><i style="width:76%"></i><i style="width:64%"></i></div></li></ol></div><div class="mk-pg"><img src="fotos/s1-06.jpg" alt=""><p class="mk-h">Preguntas frecuentes</p><div class="mk-tx"><i style="width:94%"></i><i style="width:86%"></i><i style="width:90%"></i><i style="width:58%"></i></div></div><div class="mk-pg"><p class="mk-h">Paleta de colores</p><div class="mk-pal"><i style="--c:#D8C7B0"></i><i style="--c:#9C7A5E"></i><i style="--c:#C9AE8F"></i><i style="--c:#8B918A"></i></div><div class="mk-tx"><i style="width:88%"></i><i style="width:70%"></i></div></div><div class="mk-pg mk-pg-full"><img class="mk-full" src="fotos/s3-07.jpg" alt=""></div></div><div class="mk-tab"><div class="mk-scr-in">
         <img class="mk-logo" src="fotos/logo-b.png" alt="">
@@ -1837,7 +1851,7 @@ html,body{overflow-x:clip}
       </div></div></div>
           
         </div>
-        <div class="wc-txt"><p class="wc-label">Workshop · Producción · 2 días<span class="wc-lvl">Todos los niveles</span></p><h3>Diseña una guía de bienvenida <em>para tus clientes</em></h3></div>
+        <div class="wc-txt"><p class="wc-label">2 días <i>·</i> Todos los niveles</p><h3>Diseña una guía de bienvenida <em>para tus clientes</em></h3></div>
         <p class="soft">Crea la guía que prepara a tus clientes antes de cada sesión.</p>
         <span class="more">Quiero saber más →</span>
       </a>
