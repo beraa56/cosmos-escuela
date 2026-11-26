@@ -1671,6 +1671,15 @@ html,body{overflow-x:clip}
 .logros b{font-family:var(--f-display);font-weight:400;font-size:clamp(21px,1.7vw,25px);line-height:1.2;color:var(--ink)}
 .lg-d{font-size:16px;line-height:1.55;color:var(--muted)}
 @media (max-width:860px){.logros{grid-template-columns:1fr 1fr}.logros li{padding:20px 16px 22px}.logros li:not(:nth-child(3n+1)){border-left:0}.logros li:nth-child(2n){border-left:1px solid var(--line)}.logros b{font-size:18px}.lg-d{font-size:14px}.lg-ic{width:40px;height:40px}}
+/* Manifiesto: "El Fine Art" protagonista, verbos en una línea, menos aire */
+main > section.sec.manifesto{padding-block:56px 52px !important}
+.mf-fa{margin:0;font-family:var(--f-display);font-size:clamp(46px,5.4vw,80px);line-height:1;color:var(--ink);letter-spacing:-.01em}
+.mf-fa em{color:var(--accent)}
+.manifesto .mf-intro{margin:14px 0 18px;font-size:13px;letter-spacing:.2em;color:var(--muted)}
+.manifesto .mf-lines{flex-direction:row;flex-wrap:wrap;justify-content:center;gap:4px 18px;margin:0}
+.manifesto .mf-lines .st-line{font-size:clamp(24px,2.3vw,34px);line-height:1.2}
+.manifesto .mf-close{margin-top:22px;padding-top:20px;border-top:1px solid var(--line);font-size:clamp(17px,1.4vw,20px);color:var(--text-2)}
+@media (max-width:600px){.manifesto .mf-lines{gap:0 10px}.manifesto .mf-lines .st-line{font-size:23px}}
 [hidden]{display:none !important}
 </style>
 
@@ -1725,7 +1734,8 @@ html,body{overflow-x:clip}
 
 <section class="sec manifesto">
   <div class="wrap">
-    <p class="mf-intro">El Fine Art es un proceso creativo que</p>
+    <p class="mf-fa">El <em>Fine Art</em></p>
+    <p class="mf-intro">es un proceso creativo que</p>
     <div class="st-mini mf-lines" role="heading" aria-level="2">
       <span class="st-line">se piensa,</span>
       <span class="st-line">se siente,</span>
