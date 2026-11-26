@@ -1665,6 +1665,8 @@ main > section.sec:has(.sbs){padding-bottom:0}
 /* Celular: nada se sale hacia el lado (la página no "baila") */
 html,body{overflow-x:clip}
 @media (max-width:860px){.rv.rv-left,.rv.rv-right{transform:translateY(24px)}.rv.rv-left.in,.rv.rv-right.in{transform:none}}
+/* Celular: alto fijo de las tarjetas de workshops (Safari a veces no respeta aspect-ratio y las corta) */
+@media (max-width:600px){.wcovers .wc-img,.wcovers .wc-img.wc-ba{aspect-ratio:auto !important;height:calc((100vw - var(--gl,20px) - var(--gr,20px) - 22px) * 1.25) !important;max-height:none !important;flex:none}}
 [hidden]{display:none !important}
 </style>
 
@@ -1901,7 +1903,7 @@ html,body{overflow-x:clip}
 <section class="closing">
   <div class="closing-in">
     <p class="label">Que fotografíes como tú</p>
-    <h2>Tus fotos ya son lindas. <em>Hagamos que tengan un sello que te destaque.</em></h2>
+    <h2>Tus fotos ya son lindas.<br><em>Hagamos que tengan un sello que te destaque.</em></h2>
     <a class="btn" href="#inicio" data-scroll="partir">Elige por dónde partir</a>
   </div>
 </section>
