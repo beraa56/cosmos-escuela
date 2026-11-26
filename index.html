@@ -1613,6 +1613,19 @@ main > section.sec:has(.sbs){padding-bottom:0}
 .incl li.tch{transform:translateY(-3px);box-shadow:0 12px 26px rgba(60,40,25,.08)}
 .mz-i.tch img{transform:scale(1.04)}
 .mb-steps button:active{color:#93462F;padding-left:8px}
+/* Franja de logros que se mueve, bajo "Hola, soy Bernardita" */
+.sec-creds{position:relative;padding-bottom:calc(var(--crh,62px) + 56px) !important}
+.creds{position:absolute;left:0;right:0;bottom:0;overflow:hidden;background:#F6F2EE;border-block:1px solid var(--line);padding-block:14px;white-space:nowrap}
+.cr-track{display:inline-flex;animation:mq 60s linear infinite}
+.creds:hover .cr-track{animation-play-state:paused}
+.cr-grp{display:inline-flex;align-items:center;gap:30px;padding-right:30px}
+.cr-it{display:inline-flex;align-items:baseline;gap:8px;font-size:15px;color:var(--muted)}
+.cr-it b{font-family:var(--f-display);font-weight:400;font-size:26px;line-height:1;color:var(--accent)}
+.cr-sep{color:#C9A88F;font-size:12px}
+.cr-sony{align-items:center;gap:12px;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-2)}
+.cr-sony img{height:22px;width:auto;display:block}
+@media (max-width:860px){.creds{padding-block:11px}.cr-it{font-size:13.5px}.cr-it b{font-size:22px}.cr-sony{font-size:11.5px}.cr-sony img{height:19px}.cr-track{animation-duration:45s}}
+@media (prefers-reduced-motion:reduce){.creds{overflow-x:auto}.cr-track{animation:none}}
 [hidden]{display:none !important}
 </style>
 
@@ -1668,7 +1681,7 @@ main > section.sec:has(.sbs){padding-bottom:0}
   </div>
 </section>
 
-<section class="sec">
+<section class="sec sec-creds">
   <div class="wrap intro" data-intro>
     <div class="photo tall" data-photo="bernardita"></div>
     <div class="text">
@@ -1678,14 +1691,9 @@ main > section.sec:has(.sbs){padding-bottom:0}
         <div><p class="story-k">Fine Art, a mi manera</p><p class="soft">Cada foto se volvió única, y las familias empezaron a buscarme por eso: un Fine Art luminoso, cálido y alegre.</p></div>
         <div><p class="story-k">Así nació COSMOS</p><p class="soft">Ordené mi forma de trabajar en seis pilares. Hoy, con <strong>COSMOS</strong>, <strong>ayudo a otros fotógrafos</strong> a encontrar su propia forma de mirar.</p></div>
       </div>
-      <div class="stats">
-        <div class="stat"><b>+1.200</b><span>familias fotografiadas</span></div>
-        <div class="stat"><b>+1.000</b><span>alumnas en más de 10 países</span></div>
-        <div class="stat"><b>+11 años</b><span>aplicando mi método</span></div>
-      </div>
-      <p class="badge">Sony Alpha Partner Latinoamérica</p>
     </div>
   </div>
+<div class="creds" aria-label="+1.200 familias fotografiadas, +1.000 alumnas en más de 10 países, +11 años aplicando mi método, Sony Alpha Partner Latinoamérica"><div class="cr-track" aria-hidden="true"><div class="cr-grp"><span class="cr-it"><b>+1.200</b> familias fotografiadas</span><span class="cr-sep">✦</span><span class="cr-it"><b>+1.000</b> alumnas en más de 10 países</span><span class="cr-sep">✦</span><span class="cr-it"><b>+11 años</b> aplicando mi método</span><span class="cr-sep">✦</span><span class="cr-it cr-sony"><img src="fotos/sony-alpha.png" alt="Sony Alpha">Sony Alpha Partner Latinoamérica</span><span class="cr-sep">✦</span><span class="cr-it"><b>+1.200</b> familias fotografiadas</span><span class="cr-sep">✦</span><span class="cr-it"><b>+1.000</b> alumnas en más de 10 países</span><span class="cr-sep">✦</span><span class="cr-it"><b>+11 años</b> aplicando mi método</span><span class="cr-sep">✦</span><span class="cr-it cr-sony"><img src="fotos/sony-alpha.png" alt="Sony Alpha">Sony Alpha Partner Latinoamérica</span><span class="cr-sep">✦</span></div><div class="cr-grp"><span class="cr-it"><b>+1.200</b> familias fotografiadas</span><span class="cr-sep">✦</span><span class="cr-it"><b>+1.000</b> alumnas en más de 10 países</span><span class="cr-sep">✦</span><span class="cr-it"><b>+11 años</b> aplicando mi método</span><span class="cr-sep">✦</span><span class="cr-it cr-sony"><img src="fotos/sony-alpha.png" alt="Sony Alpha">Sony Alpha Partner Latinoamérica</span><span class="cr-sep">✦</span><span class="cr-it"><b>+1.200</b> familias fotografiadas</span><span class="cr-sep">✦</span><span class="cr-it"><b>+1.000</b> alumnas en más de 10 países</span><span class="cr-sep">✦</span><span class="cr-it"><b>+11 años</b> aplicando mi método</span><span class="cr-sep">✦</span><span class="cr-it cr-sony"><img src="fotos/sony-alpha.png" alt="Sony Alpha">Sony Alpha Partner Latinoamérica</span><span class="cr-sep">✦</span></div></div></div>
 </section>
 
 <section class="sec tight">
