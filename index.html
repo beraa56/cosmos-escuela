@@ -1599,6 +1599,20 @@ main > section.sec:has(.sbs){padding-bottom:0}
 @media (min-width:861px){.mood-wrap{grid-template-columns:minmax(0,4fr) minmax(0,6fr) !important}}
 @media (max-width:860px){.mb-steps button{font-size:16px}.mb-note{padding:12px 12px 14px}.mb-chips i{width:22px;height:36px;box-shadow:inset 0 -10px 0 #FBF8F2}.mb-chips{padding:7px;gap:4px}.mb-tag{font-size:10px;padding:4px 8px}.mb-tag-q{font-size:15px}.mb-pol{padding:6px 6px 22px}.mb-pol figcaption{font-size:15px;bottom:3px}.mb-btn{right:10px;bottom:10px;padding:10px 14px;font-size:11px}.mb-leaf{width:30px}.mb-steps li{font-size:16px}}
 @media (prefers-reduced-motion:reduce){.mb-it,.mb-final{transition:none}.mb-btn{animation:none !important}}
+/* Pantallas táctiles: los efectos de "pasar el mouse" se activan solos al llegar al centro de la pantalla */
+.zz-n.tch .zz-dot{transform:translateY(-7px) scale(1.08);box-shadow:0 14px 24px rgba(60,40,25,.18)}
+.zz-n.tch .zz-t b{color:var(--accent,#93462F)}
+@media (prefers-reduced-motion:no-preference){.zz-n.tch .zz-dot{animation:zzhop .6s cubic-bezier(.34,1.56,.64,1)}}
+.wcover.tch{color:var(--ink)}
+.wcover.tch .wc-img{transform:scale(1.015)}
+.wcover.tch .mk-card .mk-tab{transform:translate(-50%,-53%) scale(.37) !important}
+.wcover.tch .pal-sw{transform:translateY(-3px)}
+.wcover.tch .pal-sw:nth-child(2){transition-delay:.05s}.wcover.tch .pal-sw:nth-child(3){transition-delay:.1s}.wcover.tch .pal-sw:nth-child(4){transition-delay:.15s}
+.ccard.tch{color:var(--ink)}
+.ccard.tch .cc-img{transform:scale(1.04)}
+.incl li.tch{transform:translateY(-3px);box-shadow:0 12px 26px rgba(60,40,25,.08)}
+.mz-i.tch img{transform:scale(1.04)}
+.mb-steps button:active{color:#93462F;padding-left:8px}
 [hidden]{display:none !important}
 </style>
 
@@ -3507,6 +3521,26 @@ const CARRUSELES = {
     });
   });
 
+  // Celular/tablet: sin mouse, los efectos se activan al hacer scroll o al tocar
+  (function () {
+    if (!window.matchMedia || !window.matchMedia("(hover: none)").matches || !("IntersectionObserver" in window)) return;
+    document.addEventListener("touchstart", function () {}, { passive: true });
+    const mid = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { en.target.classList.toggle("tch", en.isIntersecting); });
+    }, { rootMargin: "-38% 0px -38% 0px", threshold: 0 });
+    document.querySelectorAll(".wcover, .ccard, .incl > li, .mz-i").forEach(function (el) { mid.observe(el); });
+    // Zigzag COSMOS: las letras saltan una tras otra (C, O, S, M, O, S) al aparecer, y cada una al tocarla
+    function hop(li, ms) { li.classList.remove("tch"); void li.offsetWidth; li.classList.add("tch"); clearTimeout(li._t); li._t = setTimeout(function () { li.classList.remove("tch"); }, ms || 900); }
+    const zio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        en.target.querySelectorAll(".zz-n").forEach(function (li, i) { setTimeout(function () { hop(li); }, 300 + i * 260); });
+      });
+    }, { threshold: 0.6 });
+    document.querySelectorAll(".zz").forEach(function (z) { zio.observe(z); });
+    document.querySelectorAll(".zz-n").forEach(function (li) { li.addEventListener("click", function () { hop(li, 1400); }); });
+  })();
+
   const titles = {
     "inicio": "Cosmos, escuela online",
     "workshop-color": "Cosmos, escuela online",
@@ -3621,5 +3655,3 @@ const CARRUSELES = {
   });
 })();
 </script>
-
-</html>
