@@ -1635,6 +1635,32 @@ main > section.sec:has(.sbs){padding-bottom:0}
 .wcover:hover .wc-mock .mk-card .mk-tab,.wcover.tch .wc-mock .mk-card .mk-tab{transform:translate(-50%,-53%) scale(.34) !important}
 .wc-mock::before{background:linear-gradient(180deg,rgba(28,22,18,0) 30%,rgba(28,22,18,.55) 52%,rgba(28,22,18,.9) 100%) !important}
 .wc-mock .wc-txt{text-shadow:0 1px 12px rgba(0,0,0,.35)}
+/* Inicio: bajada, dos botones y línea de confianza */
+.hc-lead{margin:0;max-width:520px;font-size:clamp(17px,1.35vw,20px);line-height:1.55;color:#F3ECE5;text-shadow:0 1px 14px rgba(0,0,0,.35)}
+.hc-btns{display:flex;flex-wrap:wrap;gap:12px}
+.hc-btns .btn:not(.btn-ghost){background:#fff;border-color:#fff;color:var(--ink)}
+.hc-btns .btn:not(.btn-ghost):hover{background:transparent;color:#fff}
+.hc-trust{max-width:680px !important}
+.cover .btn-ghost{background:transparent;border-color:rgba(255,255,255,.7);color:#fff}
+.cover .btn-ghost:hover,.cover .btn-ghost:focus-visible{background:#fff;color:var(--ink)}
+.hc-trust{margin:0;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#EDE3D8;text-shadow:0 1px 10px rgba(0,0,0,.4)}
+.hc-trust i{font-style:normal;color:#EFCB94;margin:0 4px}
+/* ¿Por dónde empiezo? */
+.pick{background:#F6F2EE;border-bottom:1px solid var(--line)}
+.pick-in{display:grid;grid-template-columns:auto 1fr 1fr;align-items:stretch;gap:0;padding-block:0}
+.pick-k{margin:0;padding:26px 34px 26px 0;align-self:center;font-family:var(--f-display);font-size:clamp(24px,2vw,30px);line-height:1.15;color:var(--ink)}
+.pick-k em{color:var(--accent)}
+.pick-o{display:flex;flex-direction:column;justify-content:center;gap:6px;padding:24px 30px;border-left:1px solid var(--line);text-decoration:none;color:var(--ink);transition:background .3s}
+.pick-o:hover,.pick-o:focus-visible{background:#EFE7DF}
+.pick-q{font-size:16px;line-height:1.45;color:var(--muted)}
+.pick-a{font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--btn)}
+.pick-a small{font-size:12px;font-weight:400;letter-spacing:.06em;text-transform:none;color:var(--muted);margin-left:6px}
+.pick-a b{display:inline-block;margin-left:6px;transition:transform .3s}
+.pick-o:hover .pick-a b{transform:translateX(5px)}
+@media (max-width:860px){.pick-in{grid-template-columns:1fr}.pick-k{padding:22px 0 8px}.pick-o{border-left:0;border-top:1px solid var(--line);padding:16px 0}.pick-o:last-child{padding-bottom:20px}}
+/* Etiquetas de nivel */
+.wc-lvl{display:block;margin-top:5px;font-weight:400;letter-spacing:.08em;text-transform:none;font-size:13px;opacity:.9}
+.cc-lvl{display:block;margin-top:4px;font-weight:400;letter-spacing:.04em;text-transform:none;color:var(--muted)}
 [hidden]{display:none !important}
 </style>
 
@@ -1673,9 +1699,19 @@ main > section.sec:has(.sbs){padding-bottom:0}
   <div class="cover-in">
     <p class="label">Escuela online · El corazón del Fine Art</p>
     <h1>Aprende fotografía Fine Art <em>con mi método COSMOS.</em></h1>
-    <a class="btn" href="#inicio" data-scroll="partir">Mira los workshops y cursos</a>
+    <p class="hc-lead">Workshops y cursos online, en vivo y con mucha práctica: aprendes haciendo, aplicando cada paso en tus propias fotos.</p>
+    <div class="hc-btns"><a class="btn" href="#inicio" data-scroll="partir">Ver workshops</a><a class="btn btn-ghost" href="#inicio" data-scroll="cursos">Ver cursos</a></div>
+    <p class="hc-trust">100% online <i>·</i> En vivo y grabado <i>·</i> Mucha práctica <i>·</i> Certificado</p>
   </div>
 </header>
+
+<section class="pick" aria-label="¿Por dónde empiezo?">
+  <div class="wrap pick-in">
+    <p class="pick-k">¿Por dónde <em>empiezo?</em></p>
+    <a class="pick-o" href="#inicio" data-scroll="partir"><span class="pick-q">¿Quieres resolver algo puntual en pocos días?</span><span class="pick-a">Workshop <small>2 o 3 días</small> <b>→</b></span></a>
+    <a class="pick-o" href="#inicio" data-scroll="cursos"><span class="pick-q">¿Quieres aprender un proceso completo con acompañamiento?</span><span class="pick-a">Curso <small>4 semanas</small> <b>→</b></span></a>
+  </div>
+</section>
 
 <section class="sec manifesto">
   <div class="wrap">
@@ -1748,7 +1784,7 @@ main > section.sec:has(.sbs){padding-bottom:0}
     <div class="wcovers">
       <a class="wcover" href="#workshop-color">
         <div class="wc-img wc-pal"><div class="pal-ph" style="background-image:url('fotos/workshop-color.jpg')"></div><div class="pal-col" aria-hidden="true"><div class="pal-sw" style="--c:#B4B2AA;--t:#3A3631"></div><div class="pal-sw" style="--c:#C9A043;--t:#3A2E18"></div><div class="pal-sw" style="--c:#6E4A38;--t:#F3E9DC"></div><div class="pal-sw" style="--c:#55543A;--t:#F3E9DC"></div></div>
-          <div class="wc-txt"><p class="wc-label">Workshop · Fotografía · 3 días</p><h3>Construye una paleta de color <em>que transmita una emoción</em></h3></div>
+          <div class="wc-txt"><p class="wc-label">Workshop · Fotografía · 3 días<span class="wc-lvl">Todos los niveles</span></p><h3>Construye una paleta de color <em>que transmita una emoción</em></h3></div>
         </div>
         <p class="soft">Elige una emoción, construye su paleta desde la locación y llévala a una foto real.</p>
         <span class="more">Quiero saber más →</span>
@@ -1760,7 +1796,7 @@ main > section.sec:has(.sbs){padding-bottom:0}
           <span class="ba-tag wc-t1">Antes</span><span class="ba-tag wc-t2">Después</span>
           <span class="ba-line" aria-hidden="true"></span>
           <input type="range" min="0" max="100" value="50" aria-label="Comparar antes y después" id="ba-inicio">
-          <a class="wc-txt" href="#workshop-edicion"><p class="wc-label">Workshop · Edición · 3 días</p><h3>Simplifica tu edición <em>Fine Art</em></h3></a>
+          <a class="wc-txt" href="#workshop-edicion"><p class="wc-label">Workshop · Edición · 3 días<span class="wc-lvl">Todos los niveles</span></p><h3>Simplifica tu edición <em>Fine Art</em></h3></a>
         </div>
         <p class="soft">Pasos simples para editar sin complicarte, aplicados en tus propias fotos. Desliza la foto para ver el antes y después.</p>
         <a class="more" href="#workshop-edicion">Quiero saber más →</a>
@@ -1776,7 +1812,7 @@ main > section.sec:has(.sbs){padding-bottom:0}
         <p class="mk-sub">Qué esperar + cómo prepararte</p>
         <p class="mk-tag">Sesiones naturales, cercanas y llenas de conexión.</p>
       </div></div></div>
-          <div class="wc-txt"><p class="wc-label">Workshop · Producción · 2 días</p><h3>Diseña una guía de bienvenida <em>para tus clientes</em></h3></div>
+          <div class="wc-txt"><p class="wc-label">Workshop · Producción · 2 días<span class="wc-lvl">Todos los niveles</span></p><h3>Diseña una guía de bienvenida <em>para tus clientes</em></h3></div>
         </div>
         <p class="soft">Crea la guía que prepara a tus clientes antes de cada sesión.</p>
         <span class="more">Quiero saber más →</span>
@@ -1815,7 +1851,7 @@ main > section.sec:has(.sbs){padding-bottom:0}
   </div>
 </section>
 
-<section class="sec grey">
+<section class="sec grey" data-anchor="cursos">
   <div class="wrap">
     <div class="head">
       <p class="label">Formación completa · 4 semanas</p>
@@ -1823,9 +1859,9 @@ main > section.sec:has(.sbs){padding-bottom:0}
       <p class="soft">Mi formación incluye tres grandes áreas: fotografía, edición y producción de sesiones. Cada una te entrega herramientas para desarrollar tus proyectos con más seguridad, criterio y autonomía, online, desde la comodidad de tu casa y con ejercicios prácticos. Conocerás todos mis secretos.</p>
     </div>
     <div class="ccards">
-      <a class="ccard" href="#idea-al-disparo"><div class="cc-img" style="background-image:url('fotos/idea-al-disparo.jpg')"></div><div class="cc-body"><p class="label">Fotografía</p><h3>De la idea al disparo</h3><p class="soft">Lleva una idea a una foto con intención, hasta que salga desde la cámara.</p><span class="more">Ver el curso →</span></div></a>
-      <a class="ccard" href="#edicion"><div class="cc-img" style="background-image:url('fotos/edicion-curso.jpg');background-position:80% 50%"></div><div class="cc-body"><p class="label">Edición</p><h3>Edición Profesional Fine Art</h3><p class="soft">Del RAW a una serie terminada, lista para imprimir y entregar.</p><span class="more">Ver el curso →</span></div></a>
-      <a class="ccard" href="#produccion"><div class="cc-img" style="background-image:url('fotos/produccion-curso.jpg');background-position:70% 40%"></div><div class="cc-body"><p class="label">Producción</p><h3>Diseño y producción de sesiones Fine Art</h3><p class="soft">Prepara, dirige y entrega sesiones completas, cuidando la rentabilidad.</p><span class="more">Ver el curso →</span></div></a>
+      <a class="ccard" href="#idea-al-disparo"><div class="cc-img" style="background-image:url('fotos/idea-al-disparo.jpg')"></div><div class="cc-body"><p class="label">Curso · Fotografía · 4 semanas<span class="cc-lvl">Todos los niveles</span></p><h3>De la idea al disparo</h3><p class="soft">Lleva una idea a una foto con intención, hasta que salga desde la cámara.</p><span class="more">Ver el curso →</span></div></a>
+      <a class="ccard" href="#edicion"><div class="cc-img" style="background-image:url('fotos/edicion-curso.jpg');background-position:80% 50%"></div><div class="cc-body"><p class="label">Curso · Edición · 4 semanas<span class="cc-lvl">Todos los niveles</span></p><h3>Edición Profesional Fine Art</h3><p class="soft">Del RAW a una serie terminada, lista para imprimir y entregar.</p><span class="more">Ver el curso →</span></div></a>
+      <a class="ccard" href="#produccion"><div class="cc-img" style="background-image:url('fotos/produccion-curso.jpg');background-position:70% 40%"></div><div class="cc-body"><p class="label">Curso · Producción · 4 semanas<span class="cc-lvl">Todos los niveles</span></p><h3>Diseño y producción de sesiones Fine Art</h3><p class="soft">Prepara, dirige y entrega sesiones completas, cuidando la rentabilidad.</p><span class="more">Ver el curso →</span></div></a>
     </div>
     <div class="grad grad-home"><div class="grad-seal" aria-hidden="true"><svg viewBox="0 0 120 120"><defs><path id="gpath" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs><circle cx="60" cy="60" r="57" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="60" cy="60" r="33" fill="none" stroke="currentColor" stroke-width=".8"/><text font-size="9.5" letter-spacing="1" fill="currentColor"><textPath href="#gpath" textLength="272" lengthAdjust="spacing">GRADUADO EN COSMOS · ESCUELA ONLINE ·</textPath></text></svg><img src="fotos/logo-b.png" alt=""></div><div class="grad-t"><p class="label">La formación completa</p><p class="grad-h">Graduado en <em>COSMOS</em></p><p class="soft">Si completas los tres cursos, <b>De la idea al disparo</b>, <b>Edición Profesional Fine Art</b> y <b>Diseño y producción de sesiones</b>, recibes el certificado especial de Graduado en COSMOS: el reconocimiento a que dominas el método completo, de la idea a la entrega.</p></div></div>
   </div>
@@ -1861,7 +1897,7 @@ main > section.sec:has(.sbs){padding-bottom:0}
 <section class="closing">
   <div class="closing-in">
     <p class="label">Que fotografíes como tú</p>
-    <h2>Encuentra tu forma <em>de mirar.</em></h2>
+    <h2>Tus fotos ya son lindas. <em>Hagamos que tengan un sello que te destaque.</em></h2>
     <a class="btn" href="#inicio" data-scroll="partir">Elige por dónde partir</a>
   </div>
 </section>
@@ -1999,6 +2035,8 @@ main > section.sec:has(.sbs){padding-bottom:0}
   <div class="wrap narrow">
     <div class="head" style="margin-bottom:24px"><p class="label">Preguntas frecuentes</p></div>
     <div class="faqs">
+      <details><summary>¿Cuánto tiempo necesito?</summary><p>Las clases en vivo duran 2 horas cada una. Entre una clase y otra, te recomiendo reservar un rato para practicar en tus propias fotos, porque aquí se aprende haciendo.</p></details>
+      <details><summary>¿Necesito una cámara profesional?</summary><p>No necesitas un equipo de último modelo. Idealmente una cámara réflex o mirrorless, para que puedas controlar la exposición, pero lo más importante es aprender a mirar el color.</p></details>
       <details><summary>¿Y si no puedo estar en vivo?</summary><p>Las clases quedan grabadas y las puedes ver durante un mes.</p></details>
       <details><summary>¿A qué hora son las clases?</summary><p>A las 7:00 pm, hora de Chile<span class="localtime"></span>. Cada clase dura 2 horas.</p></details>
       <details><summary>¿Sirve si no fotografío niños?</summary><p>Sí. Mi especialidad es el retrato infantil y familiar, pero lo que enseño sirve para cualquier área de la fotografía.</p></details>
@@ -2161,6 +2199,7 @@ main > section.sec:has(.sbs){padding-bottom:0}
   <div class="wrap narrow">
     <div class="head" style="margin-bottom:24px"><p class="label">Preguntas frecuentes</p></div>
     <div class="faqs">
+      <details><summary>¿Cuánto tiempo necesito?</summary><p>Las clases en vivo duran 2 horas cada una. Entre una clase y otra, te recomiendo reservar un rato para practicar en tus propias fotos, porque aquí se aprende haciendo.</p></details>
       <details><summary>¿Necesito saber usar Lightroom?</summary><p>No. Solo necesitas tener Lightroom Classic instalado. Si nunca lo has usado, antes del workshop te envío un video con lo básico.</p></details>
       <details><summary>¿Qué necesito para el workshop?</summary><p>Lightroom Classic instalado y las fotos de una sesión tuya, porque vas a aplicar cada paso en tus propias fotos.</p></details>
       <details><summary>¿Y si no puedo estar en vivo?</summary><p>Las clases quedan grabadas y las puedes ver durante un mes.</p></details>
@@ -2307,6 +2346,7 @@ main > section.sec:has(.sbs){padding-bottom:0}
   <div class="wrap narrow">
     <div class="head" style="margin-bottom:24px"><p class="label">Preguntas frecuentes</p></div>
     <div class="faqs">
+      <details><summary>¿Cuánto tiempo necesito?</summary><p>Las clases en vivo duran 2 horas cada una. Entre una clase y otra, te recomiendo reservar un rato para practicar en tus propias fotos, porque aquí se aprende haciendo.</p></details>
       <details><summary>¿Y si no puedo estar en vivo?</summary><p>Las clases quedan grabadas y las puedes ver durante un mes.</p></details>
       <details><summary>¿A qué hora son las clases?</summary><p>A las 7:00 pm, hora de Chile<span class="localtime"></span>. Cada clase dura 2 horas.</p></details>
       <details><summary>¿Sirve si no fotografío niños?</summary><p>Sí. Mi especialidad es el retrato infantil y familiar, pero lo que enseño sirve para cualquier área de la fotografía.</p></details>
@@ -2562,6 +2602,7 @@ main > section.sec:has(.sbs){padding-bottom:0}
   <div class="wrap narrow">
     <div class="head" style="margin-bottom:24px"><p class="label">Preguntas frecuentes</p></div>
     <div class="faqs">
+      <details><summary>¿Cuántas horas a la semana necesito?</summary><p>Una clase en vivo de 2 horas por semana. Además, te recomiendo reservar unas 2 a 3 horas semanales para practicar, porque aquí se aprende haciendo.</p></details>
       <details><summary>¿Necesito saber usar mi cámara?</summary><p>Necesitas conocer lo básico. Si quieres reforzarlo, antes de empezar tienes un curso grabado de fundamentos fotográficos.</p></details>
       <details><summary>¿Qué cámara necesito?</summary><p>Idealmente una cámara réflex o mirrorless con lentes intercambiables, para que puedas controlar la exposición y la profundidad de campo.</p></details>
       <details><summary>¿El curso incluye edición?</summary><p>Elegimos y ordenamos tu serie con criterio visual, pero la técnica de edición se ve en el curso <a href="#edicion">Edición Profesional Fine Art</a>.</p></details>
@@ -2849,6 +2890,7 @@ main > section.sec:has(.sbs){padding-bottom:0}
   <div class="wrap narrow">
     <div class="head" style="margin-bottom:24px"><p class="label">Preguntas frecuentes</p></div>
     <div class="faqs">
+      <details><summary>¿Cuántas horas a la semana necesito?</summary><p>Una clase en vivo de 2 horas por semana. Además, te recomiendo reservar unas 2 a 3 horas semanales para practicar, porque aquí se aprende haciendo.</p></details>
       <details><summary>¿Qué programas necesito?</summary><p>Lightroom Classic y Photoshop.</p></details>
       <details><summary>¿Necesito saber usar Lightroom?</summary><p>Necesitas conocer lo básico. Si estás partiendo, te recomiendo comenzar por el workshop <a href="#workshop-edicion">Simplifica tu edición Fine Art</a>.</p></details>
       <details><summary>¿Edito mis propias fotos?</summary><p>Sí. Te enseño con mis fotos y tú aplicas cada paso en las tuyas, hasta terminar una selección de una misma sesión.</p></details>
@@ -3053,6 +3095,7 @@ main > section.sec:has(.sbs){padding-bottom:0}
   <div class="wrap narrow">
     <div class="head" style="margin-bottom:24px"><p class="label">Preguntas frecuentes</p></div>
     <div class="faqs">
+      <details><summary>¿Cuántas horas a la semana necesito?</summary><p>Una clase en vivo de 2 horas por semana. Además, te recomiendo reservar unas 2 a 3 horas semanales para practicar, porque aquí se aprende haciendo.</p></details>
       <details><summary>¿Sirve para proyectos propios?</summary><p>Sí. Puedes trabajar una sesión para clientes o un proyecto personal.</p></details>
       <details><summary>¿Necesito un estudio o proveedores?</summary><p>No. Aprendes a resolver con lo que tienes, sin depender de un lugar específico.</p></details>
       <details><summary>¿Incluye la guía de bienvenida?</summary><p>Sí, como parte de la experiencia del cliente. Si quieres hacerla completa antes, está el workshop <a href="#workshop-guia">Diseña una guía de bienvenida para tus clientes</a>.</p></details>
