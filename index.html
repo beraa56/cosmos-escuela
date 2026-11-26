@@ -723,9 +723,9 @@ main > .cover .cover-in{padding-block:40px}
 .g-strip{overflow:hidden;padding-block:6px}
 .g-track{display:flex;gap:8px;width:max-content;animation:gscroll 70s linear infinite}
 .g-track img{height:clamp(240px,32vw,420px);width:auto;display:block;flex:none}
-.g-strip:hover .g-track{animation-play-state:paused}
+@media (hover:hover){.g-strip:hover .g-track{animation-play-state:paused}}
 @keyframes gscroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-@media (prefers-reduced-motion:reduce){.g-strip{overflow-x:auto}.g-track{animation:none}}
+
 
 /* ---------- Tablero de inspiración tipo flat lay ---------- */
 .board{position:relative;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));grid-auto-rows:minmax(40px,auto);gap:18px;padding:34px 30px 38px;background:#EFE8DF;background-image:radial-gradient(rgba(120,95,70,.06) 1px,transparent 1px),radial-gradient(rgba(120,95,70,.05) 1px,transparent 1px);background-size:7px 7px,11px 11px;background-position:0 0,3px 5px;box-shadow:inset 0 0 60px rgba(120,95,70,.10)}
@@ -1337,10 +1337,10 @@ main > section.sec:has(.pc-wrap){padding-block:32px}
 /* ---------- Sesiones: tableros con copias impresas, en desplazamiento continuo ---------- */
 .sbs{overflow:hidden;background:#E3D8C8;padding-block:34px;border-block:1px solid #D6C9B6}
 .sbs-track{display:flex;width:max-content;animation:sbs 240s linear infinite}
-.sbs:hover .sbs-track{animation-play-state:paused}
+@media (hover:hover){.sbs:hover .sbs-track{animation-play-state:paused}}
 .sbs-clone{display:contents}
 @keyframes sbs{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-@media (prefers-reduced-motion:reduce){.sbs{overflow-x:auto}.sbs-track{animation:none}}
+
 .sb{display:flex;align-items:flex-start;padding:0 70px 0 20px;position:relative}
 .sb-title{flex:none;width:200px;align-self:center;display:flex;flex-direction:column;gap:6px;padding-right:28px;position:relative}
 .sb-line{position:absolute;left:-10px;top:-60px;bottom:-60px;width:1px;background:#BFAE98}
@@ -1583,7 +1583,7 @@ main > section.sec:has(.sbs){padding-bottom:0}
 .sec-creds{position:relative;padding-bottom:calc(var(--crh,62px) + 56px) !important}
 .creds{position:absolute;left:0;right:0;bottom:0;overflow:hidden;background:#F6F2EE;border-block:1px solid var(--line);padding-block:14px;white-space:nowrap}
 .cr-track{display:inline-flex;animation:mq 60s linear infinite}
-.creds:hover .cr-track{animation-play-state:paused}
+@media (hover:hover){.creds:hover .cr-track{animation-play-state:paused}}
 .cr-grp{display:inline-flex;align-items:center;gap:30px;padding-right:30px}
 .cr-it{display:inline-flex;align-items:baseline;gap:8px;font-size:15px;color:var(--muted)}
 .cr-it b{font-family:var(--f-display);font-weight:400;font-size:26px;line-height:1;color:var(--accent)}
@@ -1591,7 +1591,7 @@ main > section.sec:has(.sbs){padding-bottom:0}
 .cr-sony{align-items:center;gap:12px;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-2)}
 .cr-sony img{height:22px;width:auto;display:block}
 @media (max-width:860px){.creds{padding-block:11px}.cr-it{font-size:13.5px}.cr-it b{font-size:22px}.cr-sony{font-size:11.5px}.cr-sony img{height:19px}.cr-track{animation-duration:45s}}
-@media (prefers-reduced-motion:reduce){.creds{overflow-x:auto}.cr-track{animation:none}}
+
 /* Tarjetas de workshops enmarcadas: paspartú crema, línea fina y filete blanco interior */
 .wcovers .wc-img{box-shadow:0 0 0 10px #F4EEE7,0 0 0 11px #DDD2C6,0 22px 40px rgba(60,40,25,.14);margin:11px 11px 4px}
 .wcovers .wc-img::after{content:"";position:absolute;inset:9px;border:1px solid rgba(255,255,255,.5);pointer-events:none;z-index:6}
@@ -1680,6 +1680,8 @@ main > section.sec.manifesto{padding-block:56px 52px !important}
 .manifesto .mf-lines .st-line{font-size:clamp(24px,2.3vw,34px);line-height:1.2}
 .manifesto .mf-close{margin-top:22px;padding-top:20px;border-top:1px solid var(--line);font-size:clamp(17px,1.4vw,20px);color:var(--text-2)}
 @media (max-width:600px){.manifesto .mf-lines{gap:0 10px}.manifesto .mf-lines .st-line{font-size:23px}}
+/* Galerías en movimiento: en celular se pausan/reanudan con un toque */
+.g-strip.paused .g-track,.creds.paused .cr-track{animation-play-state:paused}
 [hidden]{display:none !important}
 </style>
 
@@ -2545,7 +2547,7 @@ main > section.sec.manifesto{padding-block:56px 52px !important}
   <div class="wrap">
     <div class="head"><p class="label">Fotos que nacieron de una idea</p><h2>Cada foto empieza <em>antes de disparar.</em></h2></div>
   </div>
-  <div class="g-strip g-idea"><div class="g-track"><img src="fotos/i1.jpg" alt="Niña con gorro rojo y flores lilas" loading="lazy"><img src="fotos/i7.jpg" alt="Niño con un avión de juguete asomándose tras un árbol" loading="lazy"><img src="fotos/i2.jpg" alt="Niña junto a un río en otoño" loading="lazy"><img src="fotos/i3.jpg" alt="Niña con corona de flores junto a un caballo" loading="lazy"><img src="fotos/i8.jpg" alt="Cuatro hermanos abrazados en el pasto seco" loading="lazy"><img src="fotos/i4.jpg" alt="Tres hermanas con boinas entre hojas secas" loading="lazy"><img src="fotos/i5.jpg" alt="Niña caminando en un sendero de otoño" loading="lazy"><img src="fotos/i6.jpg" alt="Niña con sombrero entre árboles" loading="lazy"><img src="fotos/i1.jpg" alt="" aria-hidden="true" loading="lazy"><img src="fotos/i7.jpg" alt="" aria-hidden="true" loading="lazy"><img src="fotos/i2.jpg" alt="" aria-hidden="true" loading="lazy"><img src="fotos/i3.jpg" alt="" aria-hidden="true" loading="lazy"><img src="fotos/i8.jpg" alt="" aria-hidden="true" loading="lazy"><img src="fotos/i4.jpg" alt="" aria-hidden="true" loading="lazy"><img src="fotos/i5.jpg" alt="" aria-hidden="true" loading="lazy"><img src="fotos/i6.jpg" alt="" aria-hidden="true" loading="lazy"></div></div>
+  <div class="g-strip g-idea"><div class="g-track"><img src="fotos/i1.jpg" alt="Niña con gorro rojo y flores lilas"><img src="fotos/i7.jpg" alt="Niño con un avión de juguete asomándose tras un árbol"><img src="fotos/i2.jpg" alt="Niña junto a un río en otoño"><img src="fotos/i3.jpg" alt="Niña con corona de flores junto a un caballo"><img src="fotos/i8.jpg" alt="Cuatro hermanos abrazados en el pasto seco"><img src="fotos/i4.jpg" alt="Tres hermanas con boinas entre hojas secas"><img src="fotos/i5.jpg" alt="Niña caminando en un sendero de otoño"><img src="fotos/i6.jpg" alt="Niña con sombrero entre árboles"><img src="fotos/i1.jpg" alt="" aria-hidden="true"><img src="fotos/i7.jpg" alt="" aria-hidden="true"><img src="fotos/i2.jpg" alt="" aria-hidden="true"><img src="fotos/i3.jpg" alt="" aria-hidden="true"><img src="fotos/i8.jpg" alt="" aria-hidden="true"><img src="fotos/i4.jpg" alt="" aria-hidden="true"><img src="fotos/i5.jpg" alt="" aria-hidden="true"><img src="fotos/i6.jpg" alt="" aria-hidden="true"></div></div>
 </section>
 
 <section class="sec tight cream promise">
@@ -3607,6 +3609,11 @@ const CARRUSELES = {
     document.querySelectorAll(".zz").forEach(function (z) { zio.observe(z); });
     document.querySelectorAll(".zz-n").forEach(function (li) { li.addEventListener("click", function () { hop(li, 1400); }); });
   })();
+
+  // Galerías en movimiento: tocar para pausar o seguir (pantallas táctiles)
+  document.querySelectorAll(".g-strip, .creds").forEach(function (el) {
+    el.addEventListener("click", function () { el.classList.toggle("paused"); });
+  });
 
   const titles = {
     "inicio": "Cosmos, escuela online",
