@@ -1682,6 +1682,34 @@ main > section.sec.manifesto{padding-block:56px 52px !important}
 @media (max-width:600px){.manifesto .mf-lines{gap:0 10px}.manifesto .mf-lines .st-line{font-size:23px}}
 /* Galerías en movimiento: en celular se pausan/reanudan con un toque */
 .g-strip.paused .g-track,.creds.paused .cr-track{animation-play-state:paused}
+/* Presentación nueva */
+.intro-sub{margin:-6px 0 0;font-family:var(--f-display);font-size:clamp(22px,2vw,28px);line-height:1.25;color:var(--ink)}
+.intro-sub em{color:var(--accent)}
+.intro-sony{display:flex;align-items:center;gap:12px;margin:4px 0 0;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.intro-sony img{height:18px;width:auto}
+/* Franja de credibilidad estática */
+.sec-creds{--crh:104px}
+.creds{background:#F4EEE7 !important;padding:0 !important}
+.cr-row{list-style:none;margin:0 auto;padding:22px var(--gr) 22px var(--gl);max-width:1180px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px 24px;white-space:normal}
+.cr-row li{display:flex;align-items:center;gap:14px}
+.cr-ic{flex:none;display:flex;width:40px;height:40px;align-items:center;justify-content:center;color:var(--accent)}
+.cr-ic svg{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+.cr-tx{display:flex;flex-direction:column;font-size:14px;line-height:1.3;color:var(--muted)}
+.cr-tx b{font-family:var(--f-display);font-weight:400;font-size:30px;line-height:1.05;color:var(--ink)}
+@media (max-width:860px){.sec-creds{--crh:140px}.cr-row{grid-template-columns:1fr 1fr;gap:18px 14px;padding-block:20px}.cr-ic{width:30px}.cr-ic svg{width:24px;height:24px}.cr-tx b{font-size:24px}.cr-tx{font-size:13px}.cr-row li{gap:10px}}
+/* Elementos de una fotografía Fine Art (inicio) */
+.elem-home .eh-head{text-align:center;margin-inline:auto;max-width:820px}
+.eh-row{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.eh-row li{padding:10px 18px;border-radius:999px;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;transition:transform .3s}
+.eh-row li:hover{transform:translateY(-3px)}
+.eh-legend{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 26px;margin:18px 0 0;font-size:14px}
+.eh-legend a{display:inline-flex;align-items:center;gap:8px;color:var(--muted);text-decoration:none}
+.eh-legend a:hover{color:var(--ink)}
+.eh-legend i{width:10px;height:10px;border-radius:50%;background:currentColor}
+.eh-legend i.a-foto{color:var(--a-foto)}.eh-legend i.a-prod{color:var(--a-prod)}.eh-legend i.a-edi{color:var(--a-edi)}
+.eh-close{margin:30px auto 0;max-width:720px;padding-top:24px;border-top:1px solid var(--line);text-align:center;font-family:var(--f-display);font-size:clamp(19px,1.6vw,23px);line-height:1.45;color:var(--ink)}
+.eh-close em{color:var(--accent)}
+@media (max-width:600px){.eh-row li{padding:8px 13px;font-size:11.5px}.eh-legend{flex-direction:column;align-items:center}}
 [hidden]{display:none !important}
 </style>
 
@@ -1753,14 +1781,13 @@ main > section.sec.manifesto{padding-block:56px 52px !important}
     <div class="photo tall" data-photo="bernardita"></div>
     <div class="text">
       <p class="script">Hola, soy Bernardita</p>
-      <div class="story">
-        <div><p class="story-k">El detalle que lo cambió todo</p><p class="soft">Mis fotos eran lindas, pero se parecían a las de todas. Todo cambió cuando empecé a preparar el vestuario de cada familia pensando en el lugar y la luz.</p></div>
-        <div><p class="story-k">Fine Art, a mi manera</p><p class="soft">Cada foto se volvió única, y las familias empezaron a buscarme por eso: un Fine Art luminoso, cálido y alegre.</p></div>
-        <div><p class="story-k">Así nació COSMOS</p><p class="soft">Ordené mi forma de trabajar en seis pilares. Hoy, con <strong>COSMOS</strong>, <strong>ayudo a otros fotógrafos</strong> a encontrar su propia forma de mirar.</p></div>
-      </div>
+      <p class="intro-sub">Una forma de mirar. <em>Una forma de crear.</em></p>
+      <p class="soft">Durante años hice fotografías que me gustaban, pero sentía que algo faltaba. Mi trabajo comenzó a cambiar cuando dejé de pensar únicamente en cómo fotografiar y empecé a tomar decisiones antes de la sesión: el vestuario, la luz, el lugar, el color y lo que quería transmitir.</p>
+      <p class="soft">Ese proceso transformó mi manera de fotografiar y dio origen a <strong>COSMOS</strong>, el método que hoy uso para enseñar a otros fotógrafos a desarrollar sus ideas y construir imágenes con intención, sin depender de fórmulas ni copiar estilos.</p>
+      <p class="intro-sony"><img src="fotos/sony-alpha.png" alt="Sony Alpha">Sony Alpha Partner Latinoamérica</p>
     </div>
   </div>
-<div class="creds" aria-label="+1.200 familias fotografiadas, +1.000 alumnas en más de 10 países, +11 años aplicando mi método, Sony Alpha Partner Latinoamérica"><div class="cr-track" aria-hidden="true"><div class="cr-grp"><span class="cr-it"><b>+1.200</b> familias fotografiadas</span><span class="cr-sep">✦</span><span class="cr-it"><b>+1.000</b> alumnas en más de 10 países</span><span class="cr-sep">✦</span><span class="cr-it"><b>+11 años</b> aplicando mi método</span><span class="cr-sep">✦</span><span class="cr-it cr-sony"><img src="fotos/sony-alpha.png" alt="Sony Alpha">Sony Alpha Partner Latinoamérica</span><span class="cr-sep">✦</span><span class="cr-it"><b>+1.200</b> familias fotografiadas</span><span class="cr-sep">✦</span><span class="cr-it"><b>+1.000</b> alumnas en más de 10 países</span><span class="cr-sep">✦</span><span class="cr-it"><b>+11 años</b> aplicando mi método</span><span class="cr-sep">✦</span><span class="cr-it cr-sony"><img src="fotos/sony-alpha.png" alt="Sony Alpha">Sony Alpha Partner Latinoamérica</span><span class="cr-sep">✦</span></div><div class="cr-grp"><span class="cr-it"><b>+1.200</b> familias fotografiadas</span><span class="cr-sep">✦</span><span class="cr-it"><b>+1.000</b> alumnas en más de 10 países</span><span class="cr-sep">✦</span><span class="cr-it"><b>+11 años</b> aplicando mi método</span><span class="cr-sep">✦</span><span class="cr-it cr-sony"><img src="fotos/sony-alpha.png" alt="Sony Alpha">Sony Alpha Partner Latinoamérica</span><span class="cr-sep">✦</span><span class="cr-it"><b>+1.200</b> familias fotografiadas</span><span class="cr-sep">✦</span><span class="cr-it"><b>+1.000</b> alumnas en más de 10 países</span><span class="cr-sep">✦</span><span class="cr-it"><b>+11 años</b> aplicando mi método</span><span class="cr-sep">✦</span><span class="cr-it cr-sony"><img src="fotos/sony-alpha.png" alt="Sony Alpha">Sony Alpha Partner Latinoamérica</span><span class="cr-sep">✦</span></div></div></div>
+<div class="creds"><ul class="cr-row"><li><span class="cr-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="7" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M2.5 20c0-3.3 2.5-6 5.5-6s5.5 2.7 5.5 6"/><path d="M13.5 15.2c.9-.8 2.1-1.2 3.5-1.2 2.6 0 4.5 2.2 4.5 5"/></svg></span><span class="cr-tx"><b>+1.200</b>Familias fotografiadas</span></li><li><span class="cr-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/><path d="M22 9v5"/></svg></span><span class="cr-tx"><b>+1.000</b>Alumnas</span></li><li><span class="cr-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg></span><span class="cr-tx"><b>+10</b>Países</span></li><li><span class="cr-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><span class="cr-tx"><b>+11</b>Años de experiencia</span></li></ul></div>
 </section>
 
 <section class="sec tight">
@@ -1774,22 +1801,24 @@ main > section.sec.manifesto{padding-block:56px 52px !important}
   <div class="wrap">
     <div class="head mx-head">
       <p class="label">Mi método COSMOS</p>
-      <h2>Seis pilares para decidir <em>cada foto con intención.</em></h2>
-      <p class="soft">COSMOS es el orden que uso en cada sesión, desde que imagino la foto hasta que elijo la última.<br>Son seis pilares que guían cada decisión: qué quiero contar, qué observo, qué dejo fuera y cómo la termino. Cosmos significa orden, pero no uno que limite la creatividad: es lo que hace que todo calce.</p>
-      <ul class="mx-gains">
-        <li><b>Decides con fundamento</b>Dejas de decidir al azar y sabes por qué haces cada cosa.</li>
-        <li><b>Encuentras tu sello</b>Tus fotos ganan coherencia y una mirada que se reconoce.</li>
-        <li><b>Lo aplicas a todo</b>Sirve para cualquier tipo de fotografía, sin recetas ni copiar estilos.</li>
-      </ul>
+      <h2>Un método que utilizo <em>en todo mi proceso fotográfico.</em></h2>
+      <p class="soft">COSMOS nació de mi propia forma de crear fotografías Fine Art. Lo uso en mi trabajo y en mis formaciones, para ayudarte a desarrollar ideas y tomar decisiones con criterio.</p>
+      <p class="soft">No se limita a hacer una fotografía: te acompaña en todo el proceso, desde cómo nace una idea y cómo preparas y desarrollas una sesión, hasta cómo editas, refinas y presentas tu imagen.</p>
     </div>
     <div class="zz">
       <svg class="zz-lines" viewBox="0 0 600 380" preserveAspectRatio="none" aria-hidden="true"><polyline points="50,137 150,274 250,137 350,274 450,137 550,274" fill="none" stroke="#D9CEC3" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg>
       <ol class="zz-list"><li class="zz-n up" style="--x:8.333%;--c:#E7E0D6"><span class="zz-dot">C</span><span class="zz-t"><b>Creatividad</b>Ideas propias, con solución propia.</span></li><li class="zz-n down" style="--x:25.000%;--c:#D6B892"><span class="zz-dot">O</span><span class="zz-t"><b>Observación</b>Ver, mirar, analizar y sentir.</span></li><li class="zz-n up" style="--x:41.667%;--c:#B9AA9A"><span class="zz-dot">S</span><span class="zz-t"><b>Simplicidad</b>Quedarte con lo esencial.</span></li><li class="zz-n down" style="--x:58.333%;--c:#8B918A"><span class="zz-dot">M</span><span class="zz-t"><b>Metodología</b>Pasos claros, de la idea al resultado.</span></li><li class="zz-n up" style="--x:75.000%;--c:#CFA08C"><span class="zz-dot">O</span><span class="zz-t"><b>Objetivos</b>Una meta clara que te orienta.</span></li><li class="zz-n down" style="--x:91.667%;--c:#D6B892"><span class="zz-dot">S</span><span class="zz-t"><b>Sublime</b>Una calidad que se nota y emociona.</span></li></ol>
     </div>
-    <div class="el-row">
-      <p class="el-k">Con COSMOS cubro los 7 elementos de una foto Fine Art</p>
-      <ol><li><span>01</span>Inspiración</li><li><span>02</span>Mensaje</li><li><span>03</span>Técnica</li><li><span>04</span>Preparación</li><li><span>05</span>Sesión</li><li><span>06</span>Edición</li><li><span>07</span>Impresión</li></ol>
-    </div>
+  </div>
+</section>
+
+<section class="sec tight elem-home">
+  <div class="wrap">
+    <div class="head eh-head"><p class="label">Fotografía Fine Art</p><h2>Los elementos que construyen <em>una fotografía Fine Art.</em></h2>
+      <p class="soft">Una fotografía Fine Art no se construye a partir de una sola decisión. Es el resultado de distintos elementos que se relacionan entre sí, desde la inspiración y el mensaje, hasta la técnica, la preparación, la sesión, la edición y su presentación final.</p></div>
+    <ol class="eh-row"><li class="a-foto">Inspiración</li><li class="a-foto">Mensaje</li><li class="a-foto">Técnica</li><li class="a-prod">Preparación</li><li class="a-prod">Sesión</li><li class="a-edi">Edición</li><li class="a-edi">Impresión</li></ol>
+    <p class="eh-legend"><a href="#idea-al-disparo"><i class="a-foto"></i>De la idea al disparo</a><a href="#produccion"><i class="a-prod"></i>Diseño y producción de sesiones</a><a href="#edicion"><i class="a-edi"></i>Edición Profesional Fine Art</a></p>
+    <p class="eh-close">En COSMOS aprenderás a comprender y trabajar estos elementos, usando mi método como guía para <em>desarrollar tu propio criterio fotográfico.</em></p>
   </div>
 </section>
 
@@ -1868,7 +1897,7 @@ main > section.sec.manifesto{padding-block:56px 52px !important}
         <h3>Cursos</h3>
         <ul>
           <li><b>Duración</b><span>4 semanas, una clase en vivo por semana</span></li>
-          <li><b>Objetivo</b><span>Dominar un área completa con el método COSMOS</span></li>
+          <li><b>Objetivo</b><span>Profundizar en una etapa completa del proceso Fine Art</span></li>
           <li><b>Te llevas</b><span>Un proyecto final, bonos y criterio propio</span></li>
           <li><b>Acceso</b><span>Clases y videos por 6 meses</span></li>
           <li><b>Ideal si</b><span>Quieres llevar tu trabajo a otro nivel</span></li>
@@ -3294,11 +3323,11 @@ const CARRUSELES = {
     const sec = document.createElement("section"); sec.className = "sec tight elem-sec";
     const wrap = document.createElement("div"); wrap.className = "wrap";
     const head = document.createElement("div"); head.className = "head";
-    const lab = document.createElement("p"); lab.className = "label"; lab.textContent = "Los 7 elementos de una foto Fine Art";
+    const lab = document.createElement("p"); lab.className = "label"; lab.textContent = "Los elementos de una fotografía Fine Art";
     const h2 = document.createElement("h2"); h2.innerHTML = "En " + tipo + " trabajas <em></em>";
     h2.querySelector("em").textContent = lista + ".";
     const note = document.createElement("p"); note.className = "soft";
-    note.textContent = "Con el método COSMOS cubro los 7 elementos que necesita una foto Fine Art. En " + tipo + " profundizas en " + (activos.length > 1 ? "los que están destacados." : "el que está destacado.");
+    note.textContent = "Una fotografía Fine Art se construye con distintos elementos que se relacionan entre sí. En " + tipo + " profundizas en " + (activos.length > 1 ? "los que están destacados." : "el que está destacado.");
     head.append(lab, h2, note);
     const row = document.createElement("div"); row.className = "el-row el-course";
     const rk = document.createElement("p"); rk.className = "el-k"; rk.innerHTML = "Fotografía <em>Fine Art</em>";
@@ -3306,8 +3335,7 @@ const CARRUSELES = {
     PILARES_FINE_ART.forEach(function (nombre, i) {
       const li = document.createElement("li");
       li.className = activos.indexOf(nombre) !== -1 ? "on" : "off";
-      const n = document.createElement("span"); n.textContent = "0" + (i + 1);
-      li.append(n, document.createTextNode(nombre)); ol.appendChild(li);
+      li.textContent = nombre; ol.appendChild(li);
     });
     row.append(rk, ol);
     wrap.append(head, row); sec.appendChild(wrap);
