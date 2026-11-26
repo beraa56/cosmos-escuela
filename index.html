@@ -1630,6 +1630,7 @@ main > section.sec:has(.sbs){padding-bottom:0}
 .wcovers .wc-img{box-shadow:0 0 0 10px #F4EEE7,0 0 0 11px #DDD2C6,0 22px 40px rgba(60,40,25,.14);margin:11px 11px 4px}
 .wcovers .wc-img::after{content:"";position:absolute;inset:9px;border:1px solid rgba(255,255,255,.5);pointer-events:none;z-index:6}
 .wcovers .wc-img.wc-ba{margin:11px 11px 4px !important;width:auto !important;max-width:none !important}
+@media (min-width:861px){.wcovers .wc-img.wc-ba{aspect-ratio:1/1 !important}}
 .wcovers .wc-mock::after{border-color:rgba(255,255,255,.7)}
 .wc-mock .mk-card .mk-tab{top:25%;transform:translate(-50%,-50%) scale(.33) !important}
 .wcover:hover .wc-mock .mk-card .mk-tab,.wcover.tch .wc-mock .mk-card .mk-tab{transform:translate(-50%,-53%) scale(.34) !important}
@@ -1661,6 +1662,9 @@ main > section.sec:has(.sbs){padding-bottom:0}
 /* Etiquetas de nivel */
 .wc-lvl{display:block;margin-top:5px;font-weight:400;letter-spacing:.08em;text-transform:none;font-size:13px;opacity:.9}
 .cc-lvl{display:block;margin-top:4px;font-weight:400;letter-spacing:.04em;text-transform:none;color:var(--muted)}
+/* Celular: nada se sale hacia el lado (la página no "baila") */
+html,body{overflow-x:clip}
+@media (max-width:860px){.rv.rv-left,.rv.rv-right{transform:translateY(24px)}.rv.rv-left.in,.rv.rv-right.in{transform:none}}
 [hidden]{display:none !important}
 </style>
 
@@ -1829,22 +1833,22 @@ main > section.sec:has(.sbs){padding-bottom:0}
         <span class="pill pill-ws">Acción rápida</span>
         <h3>Workshops</h3>
         <ul>
-          <li><b>Duración</b>2 o 3 días en vivo</li>
-          <li><b>Objetivo</b>Resolver algo concreto</li>
-          <li><b>Te llevas</b>Un resultado listo para usar</li>
-          <li><b>Acceso</b>Grabaciones por 1 mes</li>
-          <li><b>Ideal si</b>Quieres partir con algo corto o probar mi método</li>
+          <li><b>Duración</b><span>2 o 3 días en vivo</span></li>
+          <li><b>Objetivo</b><span>Resolver algo concreto</span></li>
+          <li><b>Te llevas</b><span>Un resultado listo para usar</span></li>
+          <li><b>Acceso</b><span>Grabaciones por 1 mes</span></li>
+          <li><b>Ideal si</b><span>Quieres partir con algo corto o probar mi método</span></li>
         </ul>
       </div>
       <div class="vs-col vs-fc">
         <span class="pill pill-fc">Formación completa</span>
         <h3>Cursos</h3>
         <ul>
-          <li><b>Duración</b>4 semanas, una clase en vivo por semana</li>
-          <li><b>Objetivo</b>Dominar un área completa con el método COSMOS</li>
-          <li><b>Te llevas</b>Un proyecto final, bonos y criterio propio</li>
-          <li><b>Acceso</b>Clases y videos por 6 meses</li>
-          <li><b>Ideal si</b>Quieres llevar tu trabajo a otro nivel</li>
+          <li><b>Duración</b><span>4 semanas, una clase en vivo por semana</span></li>
+          <li><b>Objetivo</b><span>Dominar un área completa con el método COSMOS</span></li>
+          <li><b>Te llevas</b><span>Un proyecto final, bonos y criterio propio</span></li>
+          <li><b>Acceso</b><span>Clases y videos por 6 meses</span></li>
+          <li><b>Ideal si</b><span>Quieres llevar tu trabajo a otro nivel</span></li>
         </ul>
       </div>
     </div>
@@ -2613,7 +2617,7 @@ main > section.sec:has(.sbs){padding-bottom:0}
 </section>
 
 <section class="sec line tight">
-  <div class="wrap offer" style="border:0;padding:0">
+  <div class="wrap offer" style="border:0;padding-block:0">
     <div class="a"><p class="label">¿Prefieres partir por algo corto?</p><h3>Workshop: Construye una paleta de color que transmita una emoción</h3></div>
     <div class="b"><p class="soft">3 días para construir tu paleta desde la locación y llevarla a una foto real.</p><a class="more" href="#workshop-color">Ver el workshop →</a></div>
   </div>
@@ -2901,7 +2905,7 @@ main > section.sec:has(.sbs){padding-bottom:0}
 </section>
 
 <section class="sec line tight">
-  <div class="wrap offer" style="border:0;padding:0">
+  <div class="wrap offer" style="border:0;padding-block:0">
     <div class="a"><p class="label">¿Prefieres partir por algo corto?</p><h3>Workshop: Simplifica tu edición Fine Art</h3></div>
     <div class="b"><p class="soft">3 días para aprender a editar con un orden claro, aplicándolo en tus propias fotos.</p><a class="more" href="#workshop-edicion">Ver el workshop →</a></div>
   </div>
@@ -3106,7 +3110,7 @@ main > section.sec:has(.sbs){padding-bottom:0}
 </section>
 
 <section class="sec line tight">
-  <div class="wrap offer" style="border:0;padding:0">
+  <div class="wrap offer" style="border:0;padding-block:0">
     <div class="a"><p class="label">¿Prefieres partir por algo corto?</p><h3>Workshop: Diseña una guía de bienvenida para tus clientes</h3></div>
     <div class="b"><p class="soft">2 días para crear la guía que prepara a tus clientes.</p><a class="more" href="#workshop-guia">Ver el workshop →</a></div>
   </div>
